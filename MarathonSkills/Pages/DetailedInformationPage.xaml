@@ -1,0 +1,108 @@
+﻿<Page x:Class="MarathonSkills.DetailedInformationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MarathonSkills"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="DetailedInformationPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.8*"/>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <TextBlock 
+            Text="Подробная информация"
+            FontSize="36"
+            Grid.ColumnSpan="2"
+            TextAlignment="Center"
+            FontFamily="{StaticResource HeaderFont}"
+            VerticalAlignment="Center"
+            />
+
+        <Button 
+            Name="AboutMarathon"
+            Grid.Column="0"
+            Grid.Row="1"
+            Margin="15"
+            Background="{StaticResource BrazilBlue}"
+            Foreground="{StaticResource WsWhite}"
+            FontFamily="{StaticResource MainFont}"
+            FontSize="20"
+            Content="Marathon Skills 2016"
+            Click="AboutMarathon_Click"
+            />
+
+        <Button 
+            Name="HowLongMarathonButton"
+            Grid.Column="1"
+                Grid.Row="1"
+                Margin="15"
+                Background="{StaticResource BrazilBlue}"
+                Foreground="{StaticResource WsWhite}"
+                FontFamily="{StaticResource MainFont}"
+                FontSize="20"
+                Content="Насколько долгий марафон" 
+                Click="HowLongMarathonButton_Click"
+                />
+
+        <Button Grid.Column="0"
+                Grid.Row="2"
+                Margin="15"
+                Background="{StaticResource BrazilBlue}"
+                Foreground="{StaticResource WsWhite}"
+                FontFamily="{StaticResource MainFont}"
+                FontSize="20"
+                Content="Предыдущие результаты" />
+
+        <Button 
+            Name="CharityListButton"
+            Click="CharityListButton_Click"
+            Grid.Column="1"
+                Grid.Row="2"
+                Margin="15"
+                Background="{StaticResource BrazilBlue}"
+                Foreground="{StaticResource WsWhite}"
+                FontFamily="{StaticResource MainFont}"
+                FontSize="20"
+                >
+
+            <TextBlock Text="Список благотворительных организаций"
+                       TextWrapping="Wrap"
+                       TextAlignment="Center"
+                />
+
+        </Button> 
+
+        <Button Grid.Column="0"
+                Grid.Row="3"
+                Margin="15"
+                Background="{StaticResource BrazilBlue}"
+                Foreground="{StaticResource WsWhite}"
+                FontFamily="{StaticResource MainFont}"
+                FontSize="20"
+                Content="BMI калькулятор" />
+
+        <Button Grid.Column="1"
+                Grid.Row="3"
+                Margin="15"
+                Background="{StaticResource BrazilBlue}"
+                Foreground="{StaticResource WsWhite}"
+                FontFamily="{StaticResource MainFont}"
+                FontSize="20"
+                Content="BMR калькулятор" />
+
+
+    </Grid>
+</Page>

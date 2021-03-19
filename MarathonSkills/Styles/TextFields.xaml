@@ -1,0 +1,63 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    
+                    xmlns:local="clr-namespace:MarathonSkills">
+
+    <Style TargetType="{x:Type TextBox}">
+
+        <Setter Property="FontSize" Value="24"/>
+        <Setter Property="FontFamily" Value="{StaticResource MainFont}"/>
+        <Setter Property="Foreground" Value="{StaticResource WsBlack}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource WsBlack}"/>
+
+
+        <Setter Property="Margin" Value="10"/>
+        
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+
+        <Setter Property="Background" Value="{StaticResource WsWhite}"/>
+
+
+    </Style>
+
+
+    <Style x:Key="HintTextBlock"  TargetType="{x:Type TextBlock}">
+
+        <Setter Property="FontSize" Value="24"/>
+        <Setter Property="FontFamily" Value="{StaticResource MainFont}"/>
+        <Setter Property="Foreground" Value="{StaticResource WsDarkGray}"/>
+
+        <Setter Property="Margin" Value="10"/>
+        <Setter Property="Background" Value="{StaticResource WsWhite}"/>
+        <Setter Property="IsHitTestVisible" Value="False"/>
+
+
+        <!--<Setter Property="TextAlignment" Value="Center"/>-->
+
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+
+
+    </Style>
+
+
+    <Style  TargetType="{x:Type TextBlock}">
+
+        <Setter Property="FontFamily"
+                Value="{StaticResource MainFont}" />
+
+        <Setter Property="TextAlignment"
+                Value="Center" />
+
+        <Setter Property="VerticalAlignment"
+                Value="Center" />
+
+
+
+    </Style>
+
+
+
+</ResourceDictionary>

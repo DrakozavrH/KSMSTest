@@ -1,0 +1,56 @@
+﻿<Page x:Class="MarathonSkills.CoordinatorPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MarathonSkills"
+      mc:Ignorable="d"
+	  d:DesignHeight="660"
+	  d:DesignWidth="1100"
+	  MaxWidth="1150"
+	  Title="CoordinatorPage">
+
+    <Grid>
+
+		<Grid.RowDefinitions>
+			<RowDefinition Height="0.5*"/>
+			<RowDefinition />
+			<RowDefinition />
+			<RowDefinition />
+			<RowDefinition Height="0.6*" />
+		</Grid.RowDefinitions>
+
+
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition />
+			<ColumnDefinition />
+		</Grid.ColumnDefinitions>
+
+		<TextBlock 
+			Grid.ColumnSpan="2"
+			Text="Меню координатора"
+			FontFamily="{StaticResource HeaderFont}"
+			FontSize="36"
+			TextAlignment="Center"
+			VerticalAlignment="Center"
+			/>
+
+		<Button Grid.Row="1"
+				Grid.Column="0"
+				Margin="40"
+				Foreground="{StaticResource WsWhite}"
+				Background="{StaticResource BrazilBlue}"
+				Content="Бегуны"
+				FontSize="24" />
+
+		<Button Grid.Row="1"
+				Grid.Column="1"
+				Margin="40"
+				Foreground="{StaticResource WsWhite}"
+				Background="{StaticResource BrazilBlue}"
+				Content="Спонсоры"
+				FontSize="24" />
+
+
+	</Grid>
+</Page>

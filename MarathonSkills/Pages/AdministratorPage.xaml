@@ -1,0 +1,83 @@
+﻿<Page x:Class="MarathonSkills.AdministratorPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MarathonSkills"
+      mc:Ignorable="d"
+	  d:DesignHeight="660"
+	  d:DesignWidth="1100"
+	  MaxWidth="1150"
+	  Title="AdministratorPage">
+
+    <Grid>
+
+		<Grid.RowDefinitions>
+			<RowDefinition Height="0.5*" />
+			<RowDefinition />
+			<RowDefinition />
+			<RowDefinition />
+			<RowDefinition Height="0.5*" />
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition />
+			<ColumnDefinition />
+		</Grid.ColumnDefinitions>
+
+		<TextBlock Grid.ColumnSpan="2"
+				   FontSize="36"
+				   TextAlignment="Center"
+				   VerticalAlignment="Center"
+				   Text="Меню администратора"
+				   FontFamily="{StaticResource HeaderFont}" />
+
+
+		<Button Grid.Row="1"
+				Grid.Column="0"
+				Margin="40"
+				Foreground="{StaticResource WsWhite}"
+				Background="{StaticResource BrazilBlue}"
+				Content="Пользователи"
+				FontSize="24" />
+
+		<Button 
+            Name="VolunteerButton"
+            Grid.Row="1"
+				Grid.Column="1"
+				Margin="40"
+				Foreground="{StaticResource WsWhite}"
+				Background="{StaticResource BrazilBlue}"
+				Content="Волонтеры"
+				FontSize="24" 
+            Click="VolunteerButton_Click"
+            />
+
+		<Button 
+            Name="CharitiesButton"
+            Grid.Row="2"
+				Grid.Column="0"
+				Margin="40"
+				Foreground="{StaticResource WsWhite}"
+				Background="{StaticResource BrazilBlue}"
+				Content="Благотворительные организации"
+				FontSize="24" 
+            Click="CharitiesButton_Click"
+            />
+
+		<Button 
+            Name="InventoryButton"
+            
+            Grid.Row="2"
+				Grid.Column="1"
+				Margin="40"
+				Foreground="{StaticResource WsWhite}"
+				Background="{StaticResource BrazilBlue}"
+				Content="Инвентарь"
+				FontSize="24" 
+            Click="InventoryButton_Click"
+            />
+
+		
+
+	</Grid>
+</Page>

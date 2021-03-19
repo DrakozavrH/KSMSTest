@@ -1,0 +1,55 @@
+﻿<Page x:Class="MarathonSkills.Pages.RunnerRegistrationConfirmationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MarathonSkills.Pages"
+      mc:Ignorable="d"
+      d:DesignHeight="660"
+      d:DesignWidth="1100"
+      MaxWidth="1150"
+      Title="Registration Confirmation">
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <TextBlock 
+            Text="Спасибо за вашу регистрацию в качестве бегуна!"
+            FontSize="36"
+            FontFamily="{StaticResource HeaderFont}"
+            />
+
+        <TextBlock 
+            Text="Спасибо за вашу регистрацию в качестве бегуна в Marathon Skill 2016!"
+            Grid.Row="1"
+            FontSize="30"
+            VerticalAlignment="Top"
+            />
+
+        <TextBlock Text="С вами свяжутся по поводу оплаты."
+                   Grid.Row="2"
+                   FontSize="30"
+                   VerticalAlignment="Top" />
+
+        <Button
+            Name="OKButton"
+            Grid.Row="3"
+            VerticalAlignment="Top"
+            Background="{StaticResource BrazilBlue}"
+            Foreground="{StaticResource WsWhite}"
+            Content="OK"
+            FontSize="30"
+            HorizontalAlignment="Center"
+            Padding="40 10"
+            Click="OKButton_Click"
+            />
+
+
+    </Grid>
+</Page>

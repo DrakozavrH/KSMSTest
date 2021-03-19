@@ -1,0 +1,18 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:MarathonSkills.Styles">
+
+    <SolidColorBrush x:Key="BrazilGreen" Color="#FF00903E"/>
+    <SolidColorBrush x:Key="BrazilYellow" Color="#FFFDC100"/>
+    <SolidColorBrush x:Key="BrazilBlue" Color="#FF241D70"/>
+
+    <SolidColorBrush x:Key="WsWhite" Color="White"/>
+    <SolidColorBrush x:Key="WsLightGray" Color="#FFEBEBEB"/>
+    <SolidColorBrush x:Key="WsGray" Color="#FFB4B4B4"/>
+    <SolidColorBrush x:Key="WsDarkGray" Color="#FF505050"/>
+    <SolidColorBrush x:Key="WsBlack" Color="Black"/>
+
+
+
+
+</ResourceDictionary>

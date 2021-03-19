@@ -1,0 +1,95 @@
+﻿<Page x:Class="MarathonSkills.InventoryPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MarathonSkills"
+      mc:Ignorable="d"
+      d:DesignHeight="660"
+      d:DesignWidth="1100"
+      MaxWidth="1150"
+      MaxHeight="660"
+      Title="InventoryPage">
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition  Height="0.3*"/>
+            <RowDefinition Height="0.3*" />
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition />
+            <RowDefinition Height="0.4*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <TextBlock 
+            Text="Инвентарь"
+            Grid.ColumnSpan="2"
+            FontSize="36"
+            FontFamily="{StaticResource HeaderFont}"
+            />
+
+        <TextBlock 
+            Text="Всего зарегистрировано бегунов на марафон: 100"
+            Grid.Row="1"
+            FontSize="24"
+            Grid.ColumnSpan="2"
+            HorizontalAlignment="Left"
+            Margin="20 0"
+            />
+
+        <DataGrid 
+            Grid.Row="2"
+            Grid.ColumnSpan="2"
+            Margin="20"
+            />
+
+        <TextBlock Text="Состав комплекта"
+                   Grid.Row="3"
+                   FontSize="24"
+                   Grid.ColumnSpan="2"                   
+                    />
+
+        <DataGrid 
+            Grid.Row="4"
+            Grid.ColumnSpan="2"
+            Margin="20"
+            />
+
+        <Button
+            Name="InventoryReportButton"
+            Grid.Column="0"
+            Grid.Row="5"
+            Width="200"
+            Margin="0 15"
+            Background="{StaticResource BrazilBlue}"
+            Foreground="{StaticResource WsWhite}"
+            Content="Отчет"
+            FontSize="24"
+            FontFamily="{StaticResource MainFont}"
+            Click="InventoryReportButton_Click"
+            />
+
+
+        <Button 
+            Name="InventoryArrivalButton"
+            Grid.Column="1"
+                Grid.Row="5"
+                Width="200"
+                Margin="0 15"
+                Background="{StaticResource BrazilBlue}"
+                Foreground="{StaticResource WsWhite}"
+                Content="Поступление"
+                FontSize="24"
+                FontFamily="{StaticResource MainFont}" 
+            Click="InventoryArrivalButton_Click"
+            />
+
+
+    </Grid>
+</Page>

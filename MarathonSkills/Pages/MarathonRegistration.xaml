@@ -1,0 +1,301 @@
+﻿<Page x:Class="MarathonSkills.MarathonRegistration"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MarathonSkills"
+      mc:Ignorable="d"
+      d:DesignHeight="660"
+      d:DesignWidth="1100"
+      MaxWidth="1150"
+      Title="MarathonRegistration">
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition  Height="0.2*"/>
+            <RowDefinition  Height="0.2*"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Text="Регистрация на марафон"
+                   FontSize="36"
+                   FontFamily="{StaticResource HeaderFont}"
+                   Grid.ColumnSpan="2" />
+
+        <TextBlock Text="Пожалуйста заполните вю информацию, чтобы зарегистрироваться на Skills Marathon 2016 проводимом в Москве. Russia. С вами свяжутся после регистрации для уточнения оплаты и другой информации."
+                   FontSize="24"
+                   Grid.Row="1"
+                   Grid.ColumnSpan="2" 
+                   TextWrapping="Wrap"
+                   Margin="10"
+                   />
+
+        <Grid
+            Grid.Row="2"
+            >
+
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+
+            <TextBlock 
+                Text="Вид марафона"
+                Grid.ColumnSpan="3"
+                FontSize="30"
+                FontFamily="{StaticResource HeaderFont}"
+                />
+
+
+            <CheckBox Name="FullMarathonCheckBox"
+                      Grid.Row="1"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Center"
+                      Margin="20 0"
+                      VerticalContentAlignment="Center"
+                      Content="42km Полный марафон($145)"
+                      FontSize="15"
+                      Grid.ColumnSpan="3"
+                      Checked="FullMarathonCheckBox_Checked"
+                      Unchecked="FullMarathonCheckBox_Unchecked"
+                      >
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2"
+                                    ScaleY="2" />
+                </CheckBox.LayoutTransform>
+                                
+            </CheckBox>
+
+            <CheckBox Name="HalfMarathonCheckBox"
+                      Grid.Row="2"
+                      HorizontalAlignment="Left"
+                      Margin="20 0"
+                      VerticalAlignment="Center"
+                      VerticalContentAlignment="Center"
+                      Content="21km Полумарафон($75)"
+                      FontSize="15"
+                      Grid.ColumnSpan="3"
+                      Checked="HalfMarathonCheckBox_Checked"
+                      Unchecked="HalfMarathonCheckBox_Unchecked"
+                      >
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2"
+                                    ScaleY="2" />
+                </CheckBox.LayoutTransform>
+
+            </CheckBox>
+
+            <CheckBox Name="SmallMarathonCheckBox"
+                      Grid.Row="3"
+                      HorizontalAlignment="Left"
+                      Margin="20 0"
+                      VerticalAlignment="Center"
+                      VerticalContentAlignment="Center"
+                      Content="5km Малая дистанция($20)"
+                      FontSize="15"
+                      Grid.ColumnSpan="3"
+                      Checked="SmallMarathonCheckBox_Checked"
+                      Unchecked="SmallMarathonCheckBox_Unchecked"
+                      >
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2"
+                                    ScaleY="2" />
+                </CheckBox.LayoutTransform>
+
+            </CheckBox>
+
+            <TextBlock 
+                Grid.Row="4"
+                Grid.ColumnSpan="3"
+                Text="Детали спонсорства"
+                       FontSize="30"
+                       FontFamily="{StaticResource HeaderFont}" />
+
+            <TextBlock 
+                Grid.Row="5"
+                Text="Взнос: "
+                HorizontalAlignment="Right"
+                FontSize="24"
+                />
+
+            <ComboBox 
+                Grid.Row="5"
+                Grid.Column="1"
+                Margin="10"
+                
+                />
+
+            <Button 
+                Grid.Row="5"
+                Grid.Column="2"
+                Margin="30 10"
+                Content="Инфо"
+                Background="{StaticResource BrazilBlue}"
+                Foreground="{StaticResource WsWhite}"
+                FontSize="24"
+                />
+
+            <TextBlock Grid.Row="6"
+                       Text="Сумма взноса: "
+                       HorizontalAlignment="Right"
+                       FontSize="24" />
+
+            <TextBox 
+                Name="CharityDonationTextBox"
+                Grid.Row="6"
+                Grid.Column="1"
+                FontSize="24"
+                FontFamily="{StaticResource MainFont}"
+                MaxLength="5"
+                Text="1"
+                     PreviewKeyDown="CharityDonationTextBox_PreviewKeyDown"
+                TextChanged="CharityDonationTextBox_TextChanged"
+                />
+
+            <Button Grid.Row="7"
+                    Grid.Column="0"
+                    Margin="10 10"
+                    Content="Регистрация"
+                    Background="{StaticResource BrazilBlue}"
+                    Foreground="{StaticResource WsWhite}"
+                    FontSize="24" />
+
+            <Button Grid.Row="7"
+                    Grid.Column="1"
+                    Margin="10 10"
+                    Content="Отмена"
+                    Background="{StaticResource BrazilBlue}"
+                    Foreground="{StaticResource WsWhite}"
+                    FontSize="24" />
+
+
+        </Grid>
+
+        <Grid Grid.Column="1"
+            Grid.Row="2">
+
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Варианты комплектов"
+                       Grid.ColumnSpan="3"
+                       FontSize="30"
+                       FontFamily="{StaticResource HeaderFont}" />
+
+
+            <RadioButton 
+                Name="BundleOption1RadioButton"
+                Grid.Row="1"
+                         VerticalContentAlignment="Center"
+                         HorizontalAlignment="Left"
+                         Margin="20 0"
+                         GroupName="Bundle"
+                Checked="BundleOption1RadioButton_Checked"
+                
+                IsChecked="True"
+                         >
+
+                <RadioButton.LayoutTransform>
+                    <ScaleTransform ScaleX="2"
+                                    ScaleY="2" />
+                </RadioButton.LayoutTransform>
+
+                <TextBlock Text="Вариант A($0): Номер бегуна + RFID браслет."
+                    TextWrapping="Wrap"
+                           TextAlignment="Left"
+                    />
+
+            </RadioButton>
+
+            <RadioButton Name="BundleOption2RadioButton"
+                Grid.Row="2"
+                         VerticalContentAlignment="Center"
+                         HorizontalAlignment="Left"
+                         Margin="20 0"
+                         GroupName="Bundle"
+                         Checked="BundleOption2RadioButton_Checked"
+                         Unchecked="BundleOption2RadioButton_Unchecked"
+                         >
+
+                <RadioButton.LayoutTransform>
+                    <ScaleTransform ScaleX="2"
+                                    ScaleY="2" />
+                </RadioButton.LayoutTransform>
+
+                <TextBlock Text="Вариант B($20): вариант A + бейсболка + бутылка воды."
+                           TextWrapping="Wrap"
+                           TextAlignment="Left" />
+
+            </RadioButton>
+
+            <RadioButton Name="BundleOption3RadioButton"
+                Grid.Row="3"
+                         VerticalContentAlignment="Center"
+                         HorizontalAlignment="Left"
+                         Margin="20 0"
+                         GroupName="Bundle"
+                         Checked="BundleOption3RadioButton_Checked"
+                         Unchecked="BundleOption3RadioButton_Unchecked"
+                         >
+
+                <RadioButton.LayoutTransform>
+                    <ScaleTransform ScaleX="2"
+                                    ScaleY="2" />
+                </RadioButton.LayoutTransform>
+
+                <TextBlock Text="Вариант C($45): вариант B + футболка + сувенирный буклет."
+                           TextWrapping="Wrap"
+                           TextAlignment="Left" />
+
+            </RadioButton>
+
+
+            <TextBlock Text="Регистрационный взнос"
+                       Grid.ColumnSpan="3"
+                       Grid.Row="5"
+                       FontSize="30"
+                       Margin="0 0 0 20"
+                       FontFamily="{StaticResource HeaderFont}" />
+
+
+            <TextBlock 
+                Name="RegistrationFeeTextBox"
+                Grid.Row="5"
+                Grid.RowSpan="3"
+                Text="$0"
+                FontSize="70"
+                FontFamily="{StaticResource MainFont}"
+                />
+
+        </Grid>
+
+
+    </Grid>
+</Page>

@@ -1,0 +1,10 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:MarathonSkills.Styles">
+
+
+    <FontFamily x:Key="HeaderFont">Fonts/#Open Sans SemiBold</FontFamily>
+    <FontFamily x:Key="MainFont">Fonts/#Open Sans Light</FontFamily>
+    <FontFamily x:Key="ArialFont">#Arial</FontFamily>
+
+</ResourceDictionary>

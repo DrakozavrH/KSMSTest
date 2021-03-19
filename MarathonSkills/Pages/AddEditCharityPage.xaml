@@ -1,0 +1,175 @@
+﻿<Page x:Class="MarathonSkills.AddEditCharityPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MarathonSkills"
+      mc:Ignorable="d"
+      d:DesignHeight="660"
+      d:DesignWidth="1100"
+      MaxWidth="1150"
+      Title="AddEditCharityPage">
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition />
+            <RowDefinition Height="0.2*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+
+        <TextBlock 
+            Grid.ColumnSpan="2"
+            FontSize="36"
+            FontFamily="{StaticResource HeaderFont}"
+            Text="Добавление/Редактирование благотворительных организаций"
+            TextWrapping="Wrap"
+            />
+
+        <Grid
+            Grid.Row="1"
+            >
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.15*"/>
+                <RowDefinition Height="0.2*"/>
+                <RowDefinition  Height="0.15*"/>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <TextBlock 
+                Text="Наименование:"
+                FontSize="24"
+                HorizontalAlignment="Left"
+                Margin="20 0"
+                />
+
+            <TextBox 
+                Grid.Row="1"
+                Width="300"
+                HorizontalAlignment="Left"
+                Margin="20 10"
+                />
+
+            <TextBlock 
+                Grid.Row="2"
+                Text="Описание:"
+                       FontSize="24"
+                       HorizontalAlignment="Left"
+                       Margin="20 0" />
+
+            <TextBox 
+                Grid.Row="3"
+                Margin="20"
+                MaxLines="9"
+                TextAlignment="Left"
+                VerticalContentAlignment="Top"
+                HorizontalContentAlignment="Left"
+                Padding="5"
+                MaxLength="1500"
+                TextWrapping="Wrap"
+                ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                ScrollViewer.VerticalScrollBarVisibility="Auto"
+                />
+
+
+        </Grid>
+
+        <Grid Grid.Row="1"
+              Grid.Column="1"
+              >
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition  Height="0.3*"/>
+                <RowDefinition Height="0.2*"/>
+                <RowDefinition Height="0.3*"/>
+                <RowDefinition Height="0.2*"/>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.ColumnSpan="2"
+                       FontSize="24"
+                       FontFamily="{StaticResource MainFont}"
+                       TextWrapping="Wrap"
+                       >
+                
+                Оставьте поле "Логотип файл" пустым если вы не хотите загружать логотип
+                
+            </TextBlock>
+
+            <TextBlock 
+                Grid.Row="1"
+                FontSize="24"
+                Text="Логотип файл:"
+                />
+
+            <TextBox 
+                Grid.Row="2"
+                />
+
+            <Button 
+                Grid.Row="2"
+                Grid.Column="1"
+                Background="{StaticResource BrazilBlue}"
+                Foreground="{StaticResource WsWhite}"
+                Margin="20 5"
+                Content="Просмотр..."
+                FontSize="24"
+                />
+
+            <TextBlock Grid.Row="3"
+                       FontSize="24"
+                       Text="Текущий логотип:" />
+
+            <Image 
+                Grid.Row="4"
+                Source="/Images/arise-logo.png"
+                
+                />
+            
+            
+
+
+        </Grid>
+
+
+        <Button 
+            Grid.Column="0"
+            Grid.Row="2"
+            Width="200"
+            Height="75"
+            FontSize="24"
+            FontFamily="{StaticResource MainFont}"
+            Background="{StaticResource BrazilBlue}"
+            Foreground="{StaticResource WsWhite}"
+            Content="Сохранить"
+            />
+
+        <Button 
+            Name="BackButton"
+            Grid.Column="1"
+                Grid.Row="2"
+                Width="200"
+                Height="75"
+                FontSize="24"
+                FontFamily="{StaticResource MainFont}"
+                Background="{StaticResource BrazilBlue}"
+                Foreground="{StaticResource WsWhite}"
+                Content="Отмена" 
+            Click="BackButton_Click"
+            />
+
+
+    </Grid>
+</Page>

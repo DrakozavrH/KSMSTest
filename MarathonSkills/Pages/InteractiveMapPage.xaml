@@ -1,0 +1,300 @@
+﻿<Page x:Class="MarathonSkills.InteractiveMapPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:MarathonSkills"
+      mc:Ignorable="d"
+      d:DesignHeight="660"
+      d:DesignWidth="1100"
+      MaxWidth="1150"
+      MaxHeight="660"
+      Title="InteractiveMapPage">
+
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="0.6*" />
+        </Grid.ColumnDefinitions>
+
+        <Image Source="/Images/Map/marathon-skills-2016-marathon-map.jpg"
+               Margin="20" />
+
+        <Border
+            Name="InfoWindow"
+            Grid.Column="1"
+            Visibility="Hidden"
+                Background="{StaticResource BrazilYellow}"
+                Margin="20">
+
+            <Grid>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+
+
+
+                <TextBlock Name="CheckpointTextBlock"
+                           Grid.ColumnSpan="2"
+                           FontSize="36"
+                           Text="Checkpoint 1"
+                           FontFamily="{StaticResource HeaderFont}" />
+
+                <TextBlock Grid.ColumnSpan="2"
+                           Grid.Row="1"
+                           FontSize="30"
+                           HorizontalAlignment="Left"
+                           Margin="20 0"
+                           Text="Landmark:" />
+
+                <TextBlock Name="LandmarkNameTextBlock"
+                           Grid.ColumnSpan="2"
+                           Grid.Row="2"
+                           FontSize="30"
+                           FontFamily="{StaticResource MainFont}"
+                           HorizontalAlignment="Center"
+                           Margin="20 0"
+                           Text="Landmark Name" />
+
+                <TextBlock 
+                    Name="ServicesProvidedTextBlock"
+                    Grid.ColumnSpan="2"
+                           Grid.Row="3"
+                           FontSize="30"
+                           HorizontalAlignment="Left"
+                           Margin="20 0"
+                           Text="Services Provided:" />
+
+
+
+                <StackPanel Name="ServiceDrinks"
+                            Orientation="Horizontal"
+                            Grid.Row="4">
+
+                    <Image Grid.Row="4"
+                           Margin="5"
+                           Source="/Images/Map/map-icon-drinks.png" />
+
+                    <TextBlock Grid.Row="4"
+                               Grid.Column="1"
+                               FontSize="24"
+                               Text="Drinks"
+                               HorizontalAlignment="Left" />
+
+                </StackPanel>
+
+                <StackPanel Name="ServiceEnergyBars"
+                            Orientation="Horizontal"
+                            Grid.Row="5">
+
+                    <Image Grid.Row="4"
+                           Margin="5"
+                           Source="/Images/Map/map-icon-energy-bars.png" />
+
+                    <TextBlock Grid.Row="4"
+                               Grid.Column="1"
+                               FontSize="24"
+                               Text="Energy Bars"
+                               HorizontalAlignment="Left" />
+
+                </StackPanel>
+
+                <StackPanel Name="ServiceToilets"
+                            Orientation="Horizontal"
+                            Grid.Row="6">
+
+                    <Image Grid.Row="4"
+                           Margin="5"
+                           Source="/Images/Map/map-icon-toilets.png" />
+
+                    <TextBlock Grid.Row="4"
+                               Grid.Column="1"
+                               FontSize="24"
+                               Text="Toilets"
+                               HorizontalAlignment="Left" />
+
+                </StackPanel>
+
+                <StackPanel Name="ServiceInformation"
+                            Orientation="Horizontal"
+                            Grid.Row="7">
+
+                    <Image Grid.Row="4"
+                           Margin="5"
+                           Source="/Images/Map/map-icon-information.png" />
+
+                    <TextBlock Grid.Row="4"
+                               Grid.Column="1"
+                               FontSize="24"
+                               Text="Information"
+                               HorizontalAlignment="Left" />
+
+                </StackPanel>
+
+                <StackPanel Name="ServiceMedical"
+                            Orientation="Horizontal"
+                            Grid.Row="8">
+
+                    <Image Grid.Row="4"
+                           Margin="5"
+                           Source="/Images/Map/map-icon-medical.png" />
+
+                    <TextBlock Grid.Row="4"
+                               Grid.Column="1"
+                               FontSize="24"
+                               Text="Medical"
+                               HorizontalAlignment="Left" />
+
+                </StackPanel>
+
+
+
+
+
+            </Grid>
+
+        </Border>
+
+        <Button Name="Checkpoint1Button"
+                Width="50"
+                Height="50"
+                Background="{StaticResource BrazilBlue}"
+                Foreground="{StaticResource WsWhite}"
+                FontSize="24"
+                Content="1"
+                Margin="450,115,188,495" 
+                Click="Checkpoint1Button_Click"
+                
+                />
+
+        <Button Name="Checkpoint2Button"
+                Width="50"
+                Height="50"
+                Background="{StaticResource BrazilBlue}"
+                Foreground="{StaticResource WsWhite}"
+                FontSize="24"
+                Content="2"
+                Margin="578,270,60,340"
+                Click="Checkpoint2Button_Click"
+                />
+
+        <Button Name="Checkpoint3Button"
+                Width="50"
+                Height="50"
+                Background="{StaticResource BrazilBlue}"
+                Foreground="{StaticResource WsWhite}"
+                FontSize="24"
+                Content="3"
+                Margin="420,347,218,263" 
+                Click="Checkpoint3Button_Click"
+                />
+
+        <Button Name="Checkpoint4Button"
+                Width="50"
+                Height="50"
+                Background="{StaticResource BrazilBlue}"
+                Foreground="{StaticResource WsWhite}"
+                FontSize="24"
+                Content="4"
+                Margin="391,468,247,142" 
+                Click="Checkpoint4Button_Click"
+                />
+
+        <Button Name="Checkpoint5Button"
+                Width="50"
+                Height="50"
+                Background="{StaticResource BrazilBlue}"
+                Foreground="{StaticResource WsWhite}"
+                FontSize="24"
+                Content="5"
+                Margin="264,563,374,47" 
+                Click="Checkpoint5Button_Click"
+                />
+
+        <Button Name="Checkpoint6Button"
+                Width="50"
+                Height="50"
+                Background="{StaticResource BrazilBlue}"
+                Foreground="{StaticResource WsWhite}"
+                FontSize="24"
+                Content="6"
+                Margin="198,438,440,172" 
+                Click="Checkpoint6Button_Click"
+                />
+
+        <Button Name="Checkpoint7Button"
+                Width="50"
+                Height="50"
+                Background="{StaticResource BrazilBlue}"
+                Foreground="{StaticResource WsWhite}"
+                FontSize="24"
+                Content="7"
+                Margin="136,230,502,380" 
+                Click="Checkpoint7Button_Click"
+                />
+
+        <Button Name="Checkpoint8Button"
+                Width="50"
+                Height="50"
+                Background="{StaticResource BrazilBlue}"
+                Foreground="{StaticResource WsWhite}"
+                FontSize="24"
+                Content="8"
+                Margin="264,100,374,510" 
+                Click="Checkpoint8Button_Click"
+                />
+
+
+        <Button Name="FullMarathonStartButton"
+                Width="75"
+                Height="75"
+                BorderThickness="0"
+                Background="Transparent"
+                Margin="412,21,201,564" 
+                Click="FullMarathonStartButton_Click"
+                Panel.ZIndex="3"
+                />
+
+        <Button Name="HalfMarathonStartButton"
+                Width="75"
+                Height="75"
+                BorderThickness="0"
+                Background="Transparent"
+                Margin="328,546,285,39" 
+                Click="HalfMarathonStartButton_Click"
+                Panel.ZIndex="3"
+                />
+
+        <Button Name="FunMarathonStartButton"
+                Width="75"
+                Height="75"
+                BorderThickness="0"
+                Background="Transparent"
+                Margin="117,98,496,487" 
+                Click="FunMarathonStartButton_Click"
+                Panel.ZIndex="3"
+                />
+        
+        
+        <Image Source="/Images/Map/map-icon-start.png"
+               Margin="119,98,496,489" 
+               
+               />
+        <Image Source="/Images/Map/map-icon-start.png"
+               Margin="328,548,288,39" />
+        <Image Source="/Images/Map/map-icon-start.png"
+               Margin="412,21,203,566" />
+
+
+    </Grid>
+</Page>

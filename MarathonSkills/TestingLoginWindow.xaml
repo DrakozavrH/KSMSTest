@@ -1,0 +1,83 @@
+﻿<Window x:Class="MarathonSkills.TestingLoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MarathonSkills"
+        mc:Ignorable="d"
+        Title="TestingLoginWindow"
+		Background="{StaticResource BrazilGreen}"
+		Height="450"
+		Width="600">
+    <Grid>
+
+		<Grid.RowDefinitions>
+			<RowDefinition />
+			<RowDefinition />
+			<RowDefinition />
+			<RowDefinition />
+			<RowDefinition />
+		</Grid.RowDefinitions>
+
+		<TextBlock 
+			Text="Только для тестирования!"
+			FontSize="36"
+			TextAlignment="Center"
+			VerticalAlignment="Center"
+			FontFamily="{StaticResource HeaderFont}"
+			Foreground="{StaticResource BrazilYellow}"
+			/>
+
+		<TextBlock 
+			Grid.Row="1"
+			Text="Под каким пользователем вы хотите войти в систему?"
+			TextWrapping="Wrap"
+				   FontSize="24"
+				   TextAlignment="Center"
+				   VerticalAlignment="Center"
+				   FontFamily="{StaticResource MainFont}"
+				   Foreground="{StaticResource WsBlack}" />
+
+
+		<Button
+			Name="LoginAsRunnerButton"
+			Grid.Row="2"
+			Background="{StaticResource BrazilBlue}"
+			Foreground="{StaticResource WsWhite}"
+			FontSize="24"
+			FontFamily="{StaticResource MainFont}"
+			Content="Бегун"
+			Margin="100 10"
+			Click="LoginAsRunnerButton_Click"
+			/>
+
+		<Button 
+			Name="LoginAsCoordinatorButton"
+			Grid.Row="3"
+				Background="{StaticResource BrazilBlue}"
+				Foreground="{StaticResource WsWhite}"
+				FontSize="24"
+				FontFamily="{StaticResource MainFont}"
+				Content="Координатор"
+				Margin="100 10" 
+			Click="LoginAsCoordinatorButton_Click"
+			/>
+
+		<Button 
+			Name="LoginAsAdministratorButton"
+			Grid.Row="4"
+				Background="{StaticResource BrazilBlue}"
+				Foreground="{StaticResource WsWhite}"
+				FontSize="24"
+				FontFamily="{StaticResource MainFont}"
+				Content="Администратор"
+				Margin="100 10" 
+			
+			Click="LoginAsAdministratorButton_Click"
+			/>
+
+
+
+
+	</Grid>
+</Window>

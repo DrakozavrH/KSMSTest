@@ -1,0 +1,45 @@
+﻿<Page x:Class="MarathonSkills.ExistingRunnersCheckPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MarathonSkills"
+      mc:Ignorable="d"
+	  d:DesignHeight="660"
+	  d:DesignWidth="1100"
+	  MaxWidth="1150"
+	  Title="ExistingRunnersCheckPage">
+
+    <Grid>
+
+		<Grid.RowDefinitions>
+			<RowDefinition />
+			<RowDefinition />
+			<RowDefinition />
+			<RowDefinition />
+		</Grid.RowDefinitions>
+
+
+		<Button Grid.Row="1"
+				Grid.Column="0"
+				Margin="250 40"
+				Foreground="{StaticResource WsWhite}"
+				Background="{StaticResource BrazilBlue}"
+				Content="Я участвовал ранее"
+				FontSize="24" />
+
+		<Button 		
+			Name="RegisterButton"
+			Grid.Row="2"
+				Grid.Column="0"
+				Margin="250 40"
+				Foreground="{StaticResource WsWhite}"
+				Background="{StaticResource BrazilBlue}"
+				Content="Я новый участник"
+				FontSize="24" 
+			Click="RegisterButton_Click"
+			
+			/>
+
+	</Grid>
+</Page>

@@ -1,0 +1,431 @@
+﻿<Page x:Class="MarathonSkills.SponsorRunnerPage"
+	  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	  xmlns:local="clr-namespace:MarathonSkills"
+	  mc:Ignorable="d"
+	  d:DesignHeight="660"
+	  d:DesignWidth="1100"
+	  MaxWidth="1150"
+	  Title="SponsorRunnerPage">
+
+	<Grid>
+
+		<Grid.RowDefinitions>
+			<RowDefinition Height="0.4*" />
+			<RowDefinition />
+		</Grid.RowDefinitions>
+
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition />
+			<ColumnDefinition />
+		</Grid.ColumnDefinitions>
+
+
+		<StackPanel Grid.ColumnSpan="2"
+					VerticalAlignment="Center">
+
+			<Label Grid.ColumnSpan="3"
+				   Content="Спонсор Бегуна"
+				   HorizontalContentAlignment="Center"
+				   VerticalContentAlignment="Center"
+				   FontSize="36"
+				   FontFamily="{StaticResource HeaderFont}" />
+
+			<TextBlock Text="Пожалуйста выберите бегуна, которого вы хотели бы спонсировать и сумму спонсорства.Спасибо за вашу поддержку бегунов и их благотворительных учреждений"
+					   FontFamily="{StaticResource MainFont}"
+					   FontSize="24"
+					   TextWrapping="Wrap"
+					   TextAlignment="Center"
+					   MaxWidth="1100"
+					   Margin="50 0 50 0" />
+
+
+		</StackPanel>
+
+		<Grid Grid.Row="1">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="0.45*" />
+				<ColumnDefinition />
+			</Grid.ColumnDefinitions>
+
+			<Grid.RowDefinitions>
+				<RowDefinition />
+				<RowDefinition />
+				<RowDefinition />
+				<RowDefinition />
+				<RowDefinition />
+				<RowDefinition />
+				<RowDefinition />
+
+
+			</Grid.RowDefinitions>
+
+
+			<Label Content="Информация о бегуне"
+				   Grid.ColumnSpan="2"
+				   HorizontalContentAlignment="Center"
+				   VerticalContentAlignment="Center"
+				   FontSize="36"
+				   FontFamily="{StaticResource MainFont}" />
+
+			<!--1-->
+			<Label Grid.Row="1"
+				   Content="Ваше имя:"
+				   FontSize="24"
+				   FontFamily="{StaticResource MainFont}"
+				   VerticalContentAlignment="Center"
+				   HorizontalContentAlignment="Center" />
+
+			<TextBox Grid.Row="1"
+					 Grid.Column="1"
+					 Name="SponsorNameTextBox"
+					 PreviewTextInput="SponsorNameTextBox_PreviewTextInput"
+					 MaxLength="60"
+					 BorderBrush="{StaticResource WsBlack}" />
+
+			<TextBlock Text="ФИО"
+					   Grid.Row="1"
+					   Grid.Column="1"
+					   Style="{StaticResource HintTextBlock}"
+					   Visibility="{Binding 
+                ElementName=SponsorNameTextBox, 
+                Path=Text.IsEmpty, 
+                Converter={StaticResource BoolToVisibilityConverter}}" />
+
+			<!--2-->
+			<Label Grid.Row="2"
+				   Content="Бегун:"
+				   FontSize="24"
+				   FontFamily="{StaticResource MainFont}"
+				   VerticalContentAlignment="Center"
+				   HorizontalContentAlignment="Center" />
+
+			<!--<ListBox
+                Name="RunnerListBox"
+                Grid.Row="2"
+                Grid.Column="1"
+                Margin="10"
+                FontSize="24"
+                VerticalContentAlignment="Center"
+                
+               
+                />-->
+
+			<ComboBox Name="RunnerComboBox"
+					  Grid.Column="1"
+					  Grid.Row="2"
+					  Margin="10"
+					  Background="{StaticResource WsWhite}"
+					  FontSize="24"
+					  Foreground="{StaticResource WsBlack}"
+					  FontFamily="{StaticResource MainFont}"
+					  VerticalContentAlignment="Center"
+					  HorizontalContentAlignment="Center"
+					  
+					  SelectionChanged="RunnerComboBox_Selected"
+					  >
+
+				<ComboBox.ItemsPanel>
+					<ItemsPanelTemplate>
+						<VirtualizingStackPanel />
+					</ItemsPanelTemplate>
+				</ComboBox.ItemsPanel>
+
+
+			</ComboBox>
+
+
+
+
+
+
+			<!--3-->
+			<Label Grid.Row="3"
+				   Content="Карта"
+				   FontSize="24"
+				   FontFamily="{StaticResource MainFont}"
+				   VerticalContentAlignment="Center"
+				   HorizontalContentAlignment="Center" />
+
+			<TextBox Grid.Row="3"
+					 Grid.Column="1"
+					 Name="CardBearerTextBox"
+					 BorderBrush="{StaticResource WsBlack}"
+					 PreviewTextInput="CardBearerTextBox_PreviewTextInput"
+					 
+					 />
+
+			<TextBlock Text="Владелец карты"
+					   Grid.Row="3"
+					   Grid.Column="1"
+					   Style="{StaticResource HintTextBlock}"
+					   Visibility="{Binding 
+                ElementName=CardBearerTextBox, 
+                Path=Text.IsEmpty, 
+                Converter={StaticResource BoolToVisibilityConverter}}" />
+
+			<!--4-->
+
+			<Label Grid.Row="4"
+				   Content="Номер карты:"
+				   FontSize="24"
+				   FontFamily="{StaticResource MainFont}"
+				   VerticalContentAlignment="Center"
+				   HorizontalContentAlignment="Center" />
+
+			<TextBox Grid.Row="4"
+					 Grid.Column="1"
+					 Name="CardNumberTextBox"
+					 BorderBrush="{StaticResource WsBlack}"
+					 MaxLength="16"
+					 TextChanged="CardNumberTextBox_TextChanged" />
+
+			<TextBlock Text="0000 0000 0000 0000"
+					   Grid.Row="4"
+					   Grid.Column="1"
+					   Style="{StaticResource HintTextBlock}"
+					   Visibility="{Binding 
+                ElementName=CardNumberTextBox, 
+                Path=Text.IsEmpty, 
+                Converter={StaticResource BoolToVisibilityConverter}}" />
+
+
+			<!--5-->
+
+			<Label Grid.Row="5"
+				   Content="Срок действия:"
+				   FontSize="24"
+				   FontFamily="{StaticResource MainFont}"
+				   VerticalContentAlignment="Center"
+				   HorizontalContentAlignment="Center" />
+
+			<StackPanel Grid.Row="5"
+						Grid.Column="1"
+						Orientation="Horizontal">
+
+				<Grid MinWidth="60">
+					<TextBox Grid.Row="1"
+							 Grid.Column="1"
+							 Name="MonthTextBox"
+							 PreviewTextInput="MonthTextBox_PreviewTextInput"
+							 MaxLength="2"
+							 TextChanged="MonthTextBox_TextChanged"
+							 BorderBrush="{StaticResource WsBlack}" />
+
+					<TextBlock Text="01"
+							   Grid.Row="1"
+							   Grid.Column="1"
+							   Style="{StaticResource HintTextBlock}"
+							   Padding="10"
+							   Visibility="{Binding 
+                ElementName=MonthTextBox, 
+                Path=Text.IsEmpty, 
+                Converter={StaticResource BoolToVisibilityConverter}}" />
+
+				</Grid>
+
+
+				<Grid MinWidth="100">
+
+					<TextBox Grid.Row="1"
+							 Grid.Column="1"
+							 MaxLength="4"
+							 Name="YearTextBox"
+							 BorderBrush="{StaticResource WsBlack}"
+							 TextChanged="YearTextBox_TextChanged" />
+
+					<TextBlock Text="2021"
+							   Grid.Row="1"
+							   Grid.Column="1"
+							   Style="{StaticResource HintTextBlock}"
+							   Padding="10"
+							   Visibility="{Binding 
+                ElementName=YearTextBox, 
+                Path=Text.IsEmpty, 
+                Converter={StaticResource BoolToVisibilityConverter}}" />
+
+				</Grid>
+
+
+
+
+			</StackPanel>
+
+
+			<!--6-->
+
+			<Label Grid.Row="6"
+				   Content="CVC:"
+				   FontSize="24"
+				   FontFamily="{StaticResource MainFont}"
+				   VerticalContentAlignment="Center"
+				   HorizontalContentAlignment="Center" />
+
+			<TextBox Grid.Row="7"
+					 Grid.Column="1"
+					 Name="CVCTextBox"
+					 MaxLength="3"
+					 
+					 BorderBrush="{StaticResource WsBlack}"
+					 TextChanged="CVCTextBox_TextChanged" />
+
+			<TextBlock Text="000"
+					   Grid.Row="7"
+					   Grid.Column="1"
+					   Style="{StaticResource HintTextBlock}"
+					   Visibility="{Binding 
+                ElementName=CVCTextBox, 
+                Path=Text.IsEmpty, 
+                Converter={StaticResource BoolToVisibilityConverter}}" />
+
+
+
+
+		</Grid>
+
+		<!--Sponsor Information-->
+
+		<Grid Grid.Column="2"
+			  Grid.Row="1">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition />
+				<ColumnDefinition />
+			</Grid.ColumnDefinitions>
+
+			<Grid.RowDefinitions>
+				<RowDefinition />
+				<RowDefinition />
+				<RowDefinition />
+				<RowDefinition Height="2*" />
+				<RowDefinition />
+				<RowDefinition />
+				<RowDefinition />
+			</Grid.RowDefinitions>
+
+			<Label Grid.ColumnSpan="2"
+				   Content="Благотворительность"
+				   HorizontalContentAlignment="Center"
+				   VerticalContentAlignment="Center"
+				   FontSize="36"
+				   FontFamily="{StaticResource HeaderFont}" />
+
+			<Label Grid.Row="1"
+				   Name="CharityNameLabel"
+				   Content="Human Rights Centre  - Sгo Paulo"
+				   HorizontalContentAlignment="Center"
+				   VerticalContentAlignment="Center"
+				   Grid.ColumnSpan="2"
+				   HorizontalAlignment="Left"
+				   Margin="30 0 0 0"
+				   FontSize="24" />
+
+			<Button Name="CharityinformationButton"
+					Grid.Row="1"
+					Grid.Column="1"
+					Margin="50 5"
+					Content="Инфо"
+					FontSize="24"
+					Padding="5"
+					HorizontalAlignment="Right"
+					Background="{StaticResource BrazilBlue}"
+					Foreground="{StaticResource WsLightGray}"
+					Click="CharityinformationButton_Click" />
+
+			<Label Grid.ColumnSpan="2"
+				   Grid.Row="2"
+				   Content="Сумма пожертвования"
+				   HorizontalContentAlignment="Center"
+				   VerticalContentAlignment="Center"
+				   FontSize="36"
+				   FontFamily="{StaticResource HeaderFont}" />
+
+			<TextBox Name="SponsorAmountTextBox"
+					 Grid.Row="3"
+					 Grid.ColumnSpan="2"
+					 Margin="100 10"
+					 Background="Transparent"
+					 BorderBrush="Transparent"
+					 Text="$0"
+					 TextAlignment="Center"
+					 FontSize="70"
+					 MaxLength="7"
+					 TextChanged="SponsorAmountTextBox_TextChanged"
+					 GotFocus="SponsorAmountTextBox_GotFocus" />
+
+			<StackPanel Grid.Row="4"
+						Grid.ColumnSpan="2"
+						Orientation="Horizontal"
+						HorizontalAlignment="Center"
+						Height="50">
+
+				<Button Name="SubtractAmountButton"
+						Width="50"
+						Background="{StaticResource BrazilBlue}"
+						Foreground="{StaticResource WsLightGray}"
+						VerticalContentAlignment="Center"
+						FontSize="36"
+						Click="SubtractAmountButton_Click">
+					<Viewbox Stretch="Uniform">
+
+						<TextBlock Text="-" />
+					</Viewbox>
+
+				</Button>
+
+				<TextBox Name="AddSubractAmount"
+						 Width="150"
+						 Margin="20 0"
+						 MaxLength="4"
+						 TextChanged="AddSubractAmount_TextChanged" />
+
+				<Button Name="AddAmountButton"
+						Width="50"
+						Background="{StaticResource BrazilBlue}"
+						Foreground="{StaticResource WsLightGray}"
+						VerticalContentAlignment="Center"
+						FontSize="36"
+						Content="+"
+						Click="AddAmountButton_Click">
+
+
+
+
+
+				</Button>
+
+
+			</StackPanel>
+
+
+			<Button Name="PayButton"
+					Grid.Row="5"
+					Grid.RowSpan="2"
+					Margin="50 30"
+					Content="Заплатить"
+					FontSize="24"
+					Background="{StaticResource BrazilBlue}"
+					Foreground="{StaticResource WsLightGray}"
+					Click="PayButton_Click" />
+
+			<Button Name="BackButton"
+					Grid.Row="5"
+					Grid.Column="1"
+					Grid.RowSpan="2"
+					Margin="50 30"
+					Content="Отмена"
+					FontSize="24"
+					Background="{StaticResource BrazilBlue}"
+					Foreground="{StaticResource WsLightGray}"
+					Click="BackButton_Click" />
+
+			
+			
+			
+		</Grid>
+
+
+
+	</Grid>
+</Page>
