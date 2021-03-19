@@ -44,5 +44,10 @@ namespace MarathonSkills
         {
 			NavigationService.Navigate(new MyRaceResultsPage());
 		}
+
+        private void MySponsorship_Click(object sender, RoutedEventArgs e)
+        {
+			NavigationService.Navigate(new MySponsorshipPage());
+        }
     }
 }

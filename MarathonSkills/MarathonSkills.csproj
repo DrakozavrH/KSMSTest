@@ -141,6 +141,9 @@
     <Compile Include="Pages\MyRaceResultsPage.xaml.cs">
       <DependentUpon>MyRaceResultsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\MySponsorshipPage.xaml.cs">
+      <DependentUpon>MySponsorshipPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\RegisterRunnerPage.xaml.cs">
       <DependentUpon>RegisterRunnerPage.xaml</DependentUpon>
     </Compile>
@@ -268,6 +271,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\MyRaceResultsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MySponsorshipPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -69,13 +69,19 @@
             Click="EditProfileButton_Click"
             />
 
-		<Button Grid.Row="2"
+		<Button 
+            Name="MySponsorship"
+            
+            Grid.Row="2"
 				Grid.Column="1"
 				Margin="40"
 				Foreground="{StaticResource WsWhite}"
 				Background="{StaticResource BrazilBlue}"
 				Content="Мой спонсор"
-				FontSize="24" />
+				FontSize="24" 
+            Click="MySponsorship_Click"
+            
+            />
 
 		<Button 
 			Name="ContactsButton"
