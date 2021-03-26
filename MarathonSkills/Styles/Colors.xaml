@@ -1,6 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:MarathonSkills.Styles">
+                    xmlns:local="clr-namespace:MarathonSkills">
 
     <SolidColorBrush x:Key="BrazilGreen" Color="#FF00903E"/>
     <SolidColorBrush x:Key="BrazilYellow" Color="#FFFDC100"/>

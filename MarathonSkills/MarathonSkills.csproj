@@ -91,6 +91,9 @@
     <Compile Include="Pages\AdministratorPage.xaml.cs">
       <DependentUpon>AdministratorPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\BMICalculatorPage.xaml.cs">
+      <DependentUpon>BMICalculatorPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\CoordinatorPage.xaml.cs">
       <DependentUpon>CoordinatorPage.xaml</DependentUpon>
     </Compile>
@@ -144,8 +147,14 @@
     <Compile Include="Pages\MySponsorshipPage.xaml.cs">
       <DependentUpon>MySponsorshipPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\PreviousRaceResults.xaml.cs">
+      <DependentUpon>PreviousRaceResults.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\RegisterRunnerPage.xaml.cs">
       <DependentUpon>RegisterRunnerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RunnerManagementPage.xaml.cs">
+      <DependentUpon>RunnerManagementPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\RunnerPage.xaml.cs">
       <DependentUpon>RunnerPage.xaml</DependentUpon>
@@ -155,6 +164,9 @@
     </Compile>
     <Compile Include="Pages\SponsorConfirmation.xaml.cs">
       <DependentUpon>SponsorConfirmation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SponsorshipOverviewPage.xaml.cs">
+      <DependentUpon>SponsorshipOverviewPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\VolunteerManagementPage.xaml.cs">
       <DependentUpon>VolunteerManagementPage.xaml</DependentUpon>
@@ -198,6 +210,12 @@
     <Compile Include="Volunteer.cs">
       <DependentUpon>MarathonSkillsModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Windows\RunnerCardWindow.xaml.cs">
+      <DependentUpon>RunnerCardWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\RunnerEmailListWindow.xaml.cs">
+      <DependentUpon>RunnerEmailListWindow.xaml</DependentUpon>
+    </Compile>
     <Page Include="InventoryReportWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -211,6 +229,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\AdministratorPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\BMICalculatorPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -278,7 +300,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\PreviousRaceResults.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\RegisterRunnerPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\RunnerManagementPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -299,6 +329,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="CharityInformationWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\SponsorshipOverviewPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -354,6 +388,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="TestingLoginWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\RunnerCardWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\RunnerEmailListWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -437,6 +479,12 @@
     <Resource Include="Images\Map\map-icon-medical.png" />
     <Resource Include="Images\Map\map-icon-start.png" />
     <Resource Include="Images\Map\map-icon-toilets.png" />
+    <Resource Include="Images\BMIIcons\bmi-healthy-icon.png" />
+    <Resource Include="Images\BMIIcons\bmi-obese-icon.png" />
+    <Resource Include="Images\BMIIcons\bmi-overweight-icon.png" />
+    <Resource Include="Images\BMIIcons\bmi-underweight-icon.png" />
+    <Resource Include="Images\BMIIcons\female-icon.png" />
+    <Resource Include="Images\BMIIcons\male-icon.png" />
     <Content Include="MarathonSkillsModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>MarathonSkillsModel.Context.cs</LastGenOutput>
