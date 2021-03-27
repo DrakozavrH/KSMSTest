@@ -100,6 +100,9 @@
     <Compile Include="Pages\CoordinatorPage.xaml.cs">
       <DependentUpon>CoordinatorPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\EditRunnerProfileAdminPage.xaml.cs">
+      <DependentUpon>EditRunnerProfileAdminPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\EditRunnerProfilePage.xaml.cs">
       <DependentUpon>EditRunnerProfilePage.xaml</DependentUpon>
     </Compile>
@@ -140,6 +143,9 @@
     </Compile>
     <Compile Include="Pages\ManageCharitiesPage.xaml.cs">
       <DependentUpon>ManageCharitiesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ManageRunnerPage.xaml.cs">
+      <DependentUpon>ManageRunnerPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\MarathonRegistration.xaml.cs">
       <DependentUpon>MarathonRegistration.xaml</DependentUpon>
@@ -250,6 +256,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\EditRunnerProfileAdminPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\EditRunnerProfilePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -295,6 +305,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\ManageCharitiesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ManageRunnerPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -499,6 +513,8 @@
     <Resource Include="Images\BMIIcons\bmi-underweight-icon.png" />
     <Resource Include="Images\BMIIcons\female-icon.png" />
     <Resource Include="Images\BMIIcons\male-icon.png" />
+    <Resource Include="Images\ManageRunner\cross-icon.png" />
+    <Resource Include="Images\ManageRunner\tick-icon.png" />
     <Content Include="MarathonSkillsModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>MarathonSkillsModel.Context.cs</LastGenOutput>
