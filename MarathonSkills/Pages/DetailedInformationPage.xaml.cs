@@ -46,5 +46,10 @@ namespace MarathonSkills
         {
             NavigationService.Navigate(new BMICalculatorPage());
         }
+
+        private void BMRCalculatorButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new BMRCalculatorPage());
+        }
     }
 }

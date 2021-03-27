@@ -94,6 +94,9 @@
     <Compile Include="Pages\BMICalculatorPage.xaml.cs">
       <DependentUpon>BMICalculatorPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\BMRCalculatorPage.xaml.cs">
+      <DependentUpon>BMRCalculatorPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\CoordinatorPage.xaml.cs">
       <DependentUpon>CoordinatorPage.xaml</DependentUpon>
     </Compile>
@@ -210,6 +213,9 @@
     <Compile Include="Volunteer.cs">
       <DependentUpon>MarathonSkillsModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Windows\BMRInfoWindow.xaml.cs">
+      <DependentUpon>BMRInfoWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\RunnerCardWindow.xaml.cs">
       <DependentUpon>RunnerCardWindow.xaml</DependentUpon>
     </Compile>
@@ -233,6 +239,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\BMICalculatorPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\BMRCalculatorPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -388,6 +398,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="TestingLoginWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\BMRInfoWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

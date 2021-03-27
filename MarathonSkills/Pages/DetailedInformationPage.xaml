@@ -99,14 +99,18 @@
             
             />
 
-        <Button Grid.Column="1"
+        <Button 
+            Name="BMRCalculatorButton"
+            Grid.Column="1"
                 Grid.Row="3"
                 Margin="15"
                 Background="{StaticResource BrazilBlue}"
                 Foreground="{StaticResource WsWhite}"
                 FontFamily="{StaticResource MainFont}"
                 FontSize="20"
-                Content="BMR калькулятор" />
+                Content="BMR калькулятор" 
+            Click="BMRCalculatorButton_Click"
+            />
 
 
     </Grid>
