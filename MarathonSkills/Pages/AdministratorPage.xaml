@@ -32,13 +32,18 @@
 				   FontFamily="{StaticResource HeaderFont}" />
 
 
-		<Button Grid.Row="1"
+		<Button 
+            Name="UsersButton"
+            Grid.Row="1"
 				Grid.Column="0"
 				Margin="40"
 				Foreground="{StaticResource WsWhite}"
 				Background="{StaticResource BrazilBlue}"
 				Content="Пользователи"
-				FontSize="24" />
+				FontSize="24" 
+            Click="UsersButton_Click"
+            
+            />
 
 		<Button 
             Name="VolunteerButton"

@@ -39,5 +39,10 @@ namespace MarathonSkills
         {
 			NavigationService.Navigate(new VolunteerManagementPage());
 		}
+
+        private void UsersButton_Click(object sender, RoutedEventArgs e)
+        {
+			NavigationService.Navigate(new UserManagementPage());
+		}
     }
 }

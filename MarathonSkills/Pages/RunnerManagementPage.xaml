@@ -67,7 +67,7 @@
                 Margin="10">
 
                 <TextBlock
-                    Text="Марафон: "
+                    Text="Статус: "
                     FontSize="24" />
 
                 <ComboBox
@@ -84,7 +84,7 @@
                 Margin="10">
 
                 <TextBlock
-                    Text="Марафон: "
+                    Text="Дистанция: "
                     FontSize="24" />
 
                 <ComboBox
@@ -101,7 +101,7 @@
                 Margin="10">
 
                 <TextBlock
-                    Text="Марафон: "
+                    Text="Сортировать: "
                     FontSize="24" />
 
                 <ComboBox
