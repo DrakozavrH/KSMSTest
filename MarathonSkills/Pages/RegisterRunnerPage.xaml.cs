@@ -43,6 +43,8 @@ namespace MarathonSkills
 
 		private void RegisterButton_Click(object sender, RoutedEventArgs e)
 		{
+			
+			
 
 			Regex EmailRegex = new Regex(@"^(\w+)@{1}(\w+)\.(\w+)");
 
@@ -95,7 +97,61 @@ namespace MarathonSkills
 				MessageBox.Show("Некорректная дата рождения"); 
 				return; 
 			}
-            
+
+
+
+
+
+
+			if (ImageByteArray.Count() > 0)
+			{
+				MarathonSkillsEntities entities = new MarathonSkillsEntities();
+
+				
+
+				entities.User.Add(new User
+				{
+					Email = EmailTextBox.Text,
+					Password = PasswordTextBox.Text,
+					FirstName = FirstNameTextBox.Text,
+					LastName = LastNameTextBox.Text,
+					RoleId = "R"
+					
+				});
+
+				entities.Runner.Add(new Runner
+				{
+					Email = EmailTextBox.Text,
+					Gender = GenderPickerComboBox.Text,
+					DateOfBirth = BirthDatePicker.SelectedDate,
+					CountryCode = entities.Country.Where(i => i.CountryName == CountryPickerComboBox.Text).FirstOrDefault().CountryCode
+
+				});
+
+				int RunnerID = entities.Runner.Max(r => r.RunnerId);
+
+				entities.RunnerImages.Add(new RunnerImages
+				{
+
+					ImageBytes = ImageByteArray,
+					runnerId = RunnerID
+
+
+				});
+
+
+				entities.SaveChanges();
+
+				NavigationService.Navigate(new RunnerRegistrationConfirmationPage());
+				NavigationService.RemoveBackEntry();
+
+			}
+			else {
+
+
+				MessageBox.Show("Изображение не выбрано");
+			
+			}
 
 
 

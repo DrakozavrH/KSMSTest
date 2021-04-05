@@ -7,7 +7,7 @@ using System.Windows;
 using System.Windows.Controls;
 
 
-namespace MarathonSkills.Pages
+namespace MarathonSkills
 {
     /// <summary>
     /// Interaction logic for RunnerRegistrationConfirmationPage.xaml

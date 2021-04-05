@@ -122,6 +122,14 @@
           <Property Name="DateOfBirth" Type="datetime" />
           <Property Name="CountryCode" Type="nchar" MaxLength="3" Nullable="false" />
         </EntityType>
+        <EntityType Name="RunnerImages">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="runnerId" Type="int" Nullable="false" />
+          <Property Name="ImageBytes" Type="varbinary(max)" Nullable="false" />
+        </EntityType>
         <EntityType Name="Sponsorship">
           <Key>
             <PropertyRef Name="SponsorshipId" />
@@ -318,6 +326,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__RunnerIma__runne__71D1E811">
+          <End Role="Runner" Type="Self.Runner" Multiplicity="1" />
+          <End Role="RunnerImages" Type="Self.RunnerImages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Runner">
+              <PropertyRef Name="RunnerId" />
+            </Principal>
+            <Dependent Role="RunnerImages">
+              <PropertyRef Name="runnerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__Sponsorsh__Regis__44FF419A">
           <End Role="Registration" Type="Self.Registration" Multiplicity="1" />
           <End Role="Sponsorship" Type="Self.Sponsorship" Multiplicity="*" />
@@ -404,6 +424,7 @@
           <EntitySet Name="RegistrationStatus" EntityType="Self.RegistrationStatus" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Runner" EntityType="Self.Runner" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RunnerImages" EntityType="Self.RunnerImages" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Sponsorship" EntityType="Self.Sponsorship" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Staff" EntityType="Self.Staff" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Timesheet" EntityType="Self.Timesheet" Schema="dbo" store:Type="Tables" />
@@ -456,6 +477,10 @@
           <AssociationSet Name="FK__Runner__Gender__412EB0B6" Association="Self.FK__Runner__Gender__412EB0B6">
             <End Role="Gender" EntitySet="Gender" />
             <End Role="Runner" EntitySet="Runner" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RunnerIma__runne__71D1E811" Association="Self.FK__RunnerIma__runne__71D1E811">
+            <End Role="Runner" EntitySet="Runner" />
+            <End Role="RunnerImages" EntitySet="RunnerImages" />
           </AssociationSet>
           <AssociationSet Name="FK__Sponsorsh__Regis__44FF419A" Association="Self.FK__Sponsorsh__Regis__44FF419A">
             <End Role="Registration" EntitySet="Registration" />
@@ -630,6 +655,7 @@
           <NavigationProperty Name="Gender1" Relationship="Self.FK__Runner__Gender__403A8C7D" FromRole="Runner" ToRole="Gender" />
           <NavigationProperty Name="Registration" Relationship="Self.FK__Registrat__Runne__44FF419A" FromRole="Runner" ToRole="Registration" />
           <NavigationProperty Name="User" Relationship="Self.FK__Runner__Email__3F466844" FromRole="Runner" ToRole="User" />
+          <NavigationProperty Name="RunnerImages" Relationship="MarathonSkills2016Model.FK__RunnerIma__runne__71D1E811" FromRole="Runner" ToRole="RunnerImages" />
         </EntityType>
         <EntityType Name="Sponsorship">
           <Key>
@@ -998,7 +1024,33 @@
             <End Role="Staff" EntitySet="Staff" />
             <End Role="Timesheet" EntitySet="Timesheet" />
           </AssociationSet>
+          <EntitySet Name="RunnerImages" EntityType="MarathonSkills2016Model.RunnerImages" />
+          <AssociationSet Name="FK__RunnerIma__runne__71D1E811" Association="MarathonSkills2016Model.FK__RunnerIma__runne__71D1E811">
+            <End Role="Runner" EntitySet="Runner" />
+            <End Role="RunnerImages" EntitySet="RunnerImages" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="RunnerImages">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="runnerId" Type="Int32" Nullable="false" />
+          <Property Name="ImageBytes" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="Runner" Relationship="MarathonSkills2016Model.FK__RunnerIma__runne__71D1E811" FromRole="RunnerImages" ToRole="Runner" />
+        </EntityType>
+        <Association Name="FK__RunnerIma__runne__71D1E811">
+          <End Type="MarathonSkills2016Model.Runner" Role="Runner" Multiplicity="1" />
+          <End Type="MarathonSkills2016Model.RunnerImages" Role="RunnerImages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Runner">
+              <PropertyRef Name="RunnerId" />
+            </Principal>
+            <Dependent Role="RunnerImages">
+              <PropertyRef Name="runnerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1189,6 +1241,15 @@
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
                 <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
                 <ScalarProperty Name="Gender" ColumnName="Gender" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RunnerImages">
+            <EntityTypeMapping TypeName="MarathonSkills2016Model.RunnerImages">
+              <MappingFragment StoreEntitySet="RunnerImages">
+                <ScalarProperty Name="ImageBytes" ColumnName="ImageBytes" />
+                <ScalarProperty Name="runnerId" ColumnName="runnerId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

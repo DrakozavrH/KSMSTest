@@ -68,6 +68,8 @@ public partial class MarathonSkillsEntities : DbContext
 
     public virtual DbSet<Volunteer> Volunteer { get; set; }
 
+    public virtual DbSet<RunnerImages> RunnerImages { get; set; }
+
 }
 
 }

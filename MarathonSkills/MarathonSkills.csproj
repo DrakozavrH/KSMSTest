@@ -214,6 +214,9 @@
     <Compile Include="Runner.cs">
       <DependentUpon>MarathonSkillsModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="RunnerImages.cs">
+      <DependentUpon>MarathonSkillsModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Sponsorship.cs">
       <DependentUpon>MarathonSkillsModel.tt</DependentUpon>
     </Compile>
