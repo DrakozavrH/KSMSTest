@@ -27,15 +27,87 @@ namespace MarathonSkills
 
 		private void LoginButton_Click(object sender, RoutedEventArgs e)
 		{
-			TestingLoginWindow window = new TestingLoginWindow();
-			window.Show();
-			Window.GetWindow(this).Close();
-		}
+			//TestingLoginWindow window = new TestingLoginWindow();
+			//window.Show();
+			//Window.GetWindow(this).Close();
+
+            if (EmailTextBox.Text == String.Empty || PasswordTextBox.Password == String.Empty)
+            {
+
+                MessageBox.Show("Все данные должны быть введены");
+                return;
+
+
+            }
+
+            var entities = new MarathonSkillsEntities();
+
+            var User = entities.User.Where(i => i.Email == EmailTextBox.Text && i.Password == PasswordTextBox.Password);
+
+            if (User.Count() == 0)
+            {
+
+                MessageBox.Show("Пользователя с такими данными не существует");
+                return;
+
+            }
+            else
+            {
+
+                MainWindow mainWindow;
+
+                switch (User.First().RoleId)
+                {
+
+                    case "R":
+                        mainWindow = new MainWindow(new RunnerPage());
+                        break;
+                    case "C":
+                        mainWindow = new MainWindow(new CoordinatorPage());
+                        break;
+                    case "A":
+                        mainWindow = new MainWindow(new AdministratorPage());
+                        break;
+                    default:
+                        mainWindow = null;
+                        break;
+
+                }
+
+
+                if (mainWindow == null)
+                {
+
+
+                    MessageBox.Show("Пользователя с такой ролью не существует");
+                    return;
+
+                }
+
+                mainWindow.Show();
+                Window.GetWindow(this).Close();
+
+
+            }
+
+
+        }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             if (NavigationService.CanGoBack)
+            {
                 NavigationService.GoBack();
+
+            }
+            else
+            {
+
+                StartWindow startWindow = new StartWindow();
+                startWindow.Show();
+                Window.GetWindow(this).Close();
+
+            }
         }
     }
 }

@@ -41,8 +41,25 @@ namespace MarathonSkills
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            if(MainFrame.CanGoBack)
-                MainFrame.GoBack();
+            if (LoginExitButton.Content.ToString() == "Вход")
+            {
+
+                MainFrame.Navigate(new LoginPage());
+                LoginExitButton.Content = "Выход";
+
+
+            }
+            else if (LoginExitButton.Content.ToString() == "Выход")
+            {
+
+
+                StartWindow startWindow = new StartWindow();
+
+                startWindow.Show();
+                this.Close();
+
+
+            }
 
         }
     }
