@@ -39,7 +39,9 @@ namespace MarathonSkills
             Countown.Start(MarathonTimer);
         }
 
-
-
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.GoBack();
+        }
     }
 }

@@ -1,10 +1,13 @@
 ﻿
+using Microsoft.Win32;
+using System;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media.Imaging;
 
 namespace MarathonSkills
 {
@@ -13,6 +16,9 @@ namespace MarathonSkills
 	/// </summary>
 	public partial class RegisterRunnerPage : Page
 	{
+
+		private byte[] ImageByteArray;
+
 		public RegisterRunnerPage()
 		{
 			InitializeComponent();
@@ -65,13 +71,15 @@ namespace MarathonSkills
 				if (!(PasswordTextBox.Text.Any(char.IsDigit) && PasswordTextBox.Text.Any(char.IsUpper) && RequiredCharacters.Any(PasswordTextBox.Text.Contains))) {
 
 					MessageBox.Show("Пароль должен содержать одну цифру, одну прописную букву и один из этих символов : ! @ # $ % ^");
-
+					return;
 				}
+
 				
 			}
 			else
 			{
 				MessageBox.Show("Пароль должен быть длиннее 6 символов");
+				return;
 			}
 
 
@@ -79,7 +87,16 @@ namespace MarathonSkills
 			if(RepeatPasswordTextBox.Text != PasswordTextBox.Text)
 			{
 				MessageBox.Show("Пароли не совпадают");
+				return;
 			}
+
+
+			if (DateTime.Now - BirthDatePicker.SelectedDate < TimeSpan.FromDays(365 * 10) || BirthDatePicker.SelectedDate > DateTime.Now) { 
+				MessageBox.Show("Некорректная дата рождения"); 
+				return; 
+			}
+            
+
 
 
 		}
@@ -98,5 +115,23 @@ namespace MarathonSkills
 			if (e.Key == Key.Space)
 				e.Handled = true;
 		}
-	}
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+			NavigationService.GoBack();
+        }
+
+        private void SelectImageButton_Click(object sender, RoutedEventArgs e)
+        {
+			
+			OpenFileDialog fileDialog = new OpenFileDialog();
+			fileDialog.Filter = "Image files (*.png) | *.png; *.jpg" ;
+			if (fileDialog.ShowDialog() == true) {
+
+				ImagePathTextBox.Text = fileDialog.FileName;
+				RunnerImage.Source = new BitmapImage(new Uri(fileDialog.FileName,UriKind.Absolute));
+				ImageByteArray = File.ReadAllBytes(fileDialog.FileName);
+			}
+        }
+    }
 }

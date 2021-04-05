@@ -108,11 +108,14 @@
                     
                     />
 
-                <TextBox 
+                <TextBox
+                    Name="HeightTextBox"
                     MinWidth="100"
                     MaxLength="3"
                     FontSize="24"
                     Margin="10 20"
+                    PreviewKeyDown="NumericTextBox_PreviewKeyDown"     
+                    ToolTip="Ваш рост"
                     />
 
                 <TextBlock
@@ -133,10 +136,14 @@
                     FontSize="24" />
 
                 <TextBox
+                    Name="WeightTextBox"
                     MinWidth="100"
                     MaxLength="3"
                     FontSize="24"
-                    Margin="10 20" />
+                    Margin="10 20" 
+                    PreviewKeyDown="NumericTextBox_PreviewKeyDown"
+                    ToolTip="Ваш вес"
+                    />
 
                 <TextBlock
                     Text="кг"
@@ -145,24 +152,30 @@
             </StackPanel>
 
 
-            <Button 
+            <Button
+                Name="CalculateButton"
                 Grid.Row="3"
                 Content="Рассчитать"
                 FontSize="24"
                 Background="{StaticResource BrazilBlue}"
                 Foreground="{StaticResource WsWhite}"
                 Margin="30 10"
+                Click="CalculateButton_Click"
                 />
 
 
             <Button
+                Name="CancelButton"
                 Grid.Row="3"
                 Grid.Column="1"
                 Content="Отмена"
                 FontSize="24"
                 Background="{StaticResource BrazilBlue}"
                 Foreground="{StaticResource WsWhite}"
-                Margin="30 10" />
+                Margin="30 10" 
+                Click="CancelButton_Click"
+                
+                />
 
 
         </Grid>
@@ -177,21 +190,23 @@
             Margin="60 10"
             />
 
-        <Image 
+        <Image
+            Name="BMIStatusIcon"
             Grid.Column="1"
             Grid.Row="1"
             Grid.RowSpan="3"
-            Source="/Images/BMIIcons/bmi-healthy-icon.png"
+            Source="/Images/BMIIcons/bmi-underweight-icon.png"
             Margin="20"
             
             />
 
-        <TextBlock 
+        <TextBlock
+            Name="BMIStatusText"
             Grid.Column="1"
             Grid.Row="3"
             FontSize="36"
             FontFamily="{StaticResource MainFont}"
-            Text="Здоровый"
+            Text="Недостаточный"
             Foreground="{StaticResource WsWhite}"
             />
 
@@ -207,16 +222,19 @@
 
             <StackPanel
                 Orientation="Vertical"
+                Name="BMIStatusArrow"
+                Margin="0,0,480,0"
                 >
 
                 <StackPanel.RenderTransform>
-                    <TranslateTransform  X="-240"/>
+                    <TranslateTransform  X="48"/>
                 </StackPanel.RenderTransform>
                 
                 
-                <TextBlock 
+                <TextBlock
+                    Name="BMIStatusNumber"
                     FontSize="24"
-                    Text="24.9"
+                    Text="0"
                     />
 
                 <Polygon 
