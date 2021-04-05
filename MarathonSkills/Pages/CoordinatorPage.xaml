@@ -35,21 +35,31 @@
 			VerticalAlignment="Center"
 			/>
 
-		<Button Grid.Row="1"
+		<Button 
+            Name="RunnersButton"
+            Grid.Row="1"
 				Grid.Column="0"
 				Margin="40"
 				Foreground="{StaticResource WsWhite}"
 				Background="{StaticResource BrazilBlue}"
 				Content="Бегуны"
-				FontSize="24" />
+				FontSize="24" 
+            Click="RunnersButton_Click"
+            
+            />
 
-		<Button Grid.Row="1"
+		<Button 
+            Name="Sponsorships"
+            Grid.Row="1"
 				Grid.Column="1"
 				Margin="40"
 				Foreground="{StaticResource WsWhite}"
 				Background="{StaticResource BrazilBlue}"
 				Content="Спонсоры"
-				FontSize="24" />
+				FontSize="24" 
+            Click="Sponsorships_Click"
+            
+            />
 
 
 	</Grid>

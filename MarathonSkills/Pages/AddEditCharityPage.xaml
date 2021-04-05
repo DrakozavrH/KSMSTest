@@ -115,10 +115,13 @@
                 />
 
             <TextBox 
+                Name="ImagePathTextBox"
                 Grid.Row="2"
+                IsReadOnly="True"
                 />
 
-            <Button 
+            <Button
+                Name="SelectImageButton"
                 Grid.Row="2"
                 Grid.Column="1"
                 Background="{StaticResource BrazilBlue}"
@@ -126,16 +129,25 @@
                 Margin="20 5"
                 Content="Просмотр..."
                 FontSize="24"
+                Click="SelectImageButton_Click"
                 />
 
             <TextBlock Grid.Row="3"
                        FontSize="24"
                        Text="Текущий логотип:" />
 
-            <Image 
+
+            <Border 
                 Grid.Row="4"
-                Source="/Images/arise-logo.png"
-                
+                BorderThickness="5"
+                BorderBrush="{StaticResource WsDarkGray}"
+                />
+
+            <Image
+                Name="CharityLogoImage"
+                Grid.Row="4"
+                Source="/Images/arise-logo.png"                
+                Margin="10"
                 />
             
             

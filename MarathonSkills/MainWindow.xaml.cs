@@ -41,7 +41,9 @@ namespace MarathonSkills
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.GoBack();
+            if(MainFrame.CanGoBack)
+                MainFrame.GoBack();
+
         }
     }
 }

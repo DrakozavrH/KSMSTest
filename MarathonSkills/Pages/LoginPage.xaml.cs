@@ -31,5 +31,11 @@ namespace MarathonSkills
 			window.Show();
 			Window.GetWindow(this).Close();
 		}
-	}
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (NavigationService.CanGoBack)
+                NavigationService.GoBack();
+        }
+    }
 }

@@ -25,7 +25,9 @@ namespace MarathonSkills
 
         }
 
-        
+        private void PrintBadgeButton_Click(object sender, RoutedEventArgs e)
+        {
 
+        }
     }
 }
