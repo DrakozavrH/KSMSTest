@@ -79,6 +79,7 @@
     <Compile Include="Gender.cs">
       <DependentUpon>MarathonSkillsModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\TextBoxInput.cs" />
     <Compile Include="InventoryReportWindow.xaml.cs">
       <DependentUpon>InventoryReportWindow.xaml</DependentUpon>
     </Compile>

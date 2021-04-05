@@ -2,8 +2,9 @@
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="clr-namespace:MarathonSkills"
+      
       mc:Ignorable="d" 
       d:DesignHeight="660"
       d:DesignWidth="1100"
@@ -135,11 +136,13 @@
                     
                     />
 
-                <TextBox 
+                <TextBox
+                    Name="HeightTextBox"
                     MinWidth="100"
                     MaxLength="3"
                     FontSize="24"
                     Margin="10 20"
+                    PreviewKeyDown="NumericTextBox_PreviewKeyDown"
                     />
 
                 <TextBlock
@@ -159,11 +162,15 @@
                     Text="Вес:"
                     FontSize="24" />
 
-                <TextBox
+                <TextBox 
+                    Name="WeightTextBox"
                     MinWidth="100"
                     MaxLength="3"
                     FontSize="24"
-                    Margin="10 20" />
+                    Margin="10 20" 
+                    PreviewKeyDown="NumericTextBox_PreviewKeyDown"
+                    
+                    />
 
                 <TextBlock
                     Text="кг"
@@ -182,10 +189,14 @@
                     FontSize="24" />
 
                 <TextBox
+                    Name="AgeTextBox"
                     MinWidth="100"
-                    MaxLength="3"
+                    MaxLength="2"
                     FontSize="24"
-                    Margin="10 20" />
+                    Margin="10 20" 
+                    PreviewKeyDown="NumericTextBox_PreviewKeyDown"
+                    
+                    />
 
                 <TextBlock
                     Text="лет"
@@ -202,6 +213,7 @@
                 Background="{StaticResource BrazilBlue}"
                 Foreground="{StaticResource WsWhite}"
                 Margin="30 10"
+                Click="CalculateButton_Click"
                 />
 
 
@@ -214,6 +226,7 @@
                 Background="{StaticResource BrazilBlue}"
                 Foreground="{StaticResource WsWhite}"
                 Margin="30 10"
+                Click="CancelButton_Click"
                 />
 
         </Grid>
@@ -259,12 +272,14 @@
                     />
 
                 <Button
+                    Name="InfoButton"
                     Background="{StaticResource BrazilBlue}"
                     Foreground="{StaticResource WsWhite}"
                     Content="Инфо"
                     Padding="30 5"
                     FontSize="24"
                     Margin="10 3 10 3"
+                    Click="InfoButton_Click"
                     />
               
             </StackPanel>
@@ -272,7 +287,7 @@
             <TextBlock
                 Grid.Row="3"
                 Name="SittingActivityTextBlock"
-                Text="Сидячий: 0"
+                Text="Сидячий образ: 0"
                 FontSize="36"
                 Foreground="{StaticResource  BrazilBlue}"
                 />
