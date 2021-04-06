@@ -15,27 +15,18 @@ namespace MarathonSkills
 using System;
     using System.Collections.Generic;
     
-public partial class Role
+public partial class RunnerImages
 {
 
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-    public Role()
-    {
+    public int Id { get; set; }
 
-        this.User = new HashSet<User>();
+    public int runnerId { get; set; }
 
-    }
-
-
-    public string RoleId { get; set; }
-
-    public string RoleName { get; set; }
+    public byte[] ImageBytes { get; set; }
 
 
 
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-
-    public virtual ICollection<User> User { get; set; }
+    public virtual Runner Runner { get; set; }
 
 }
 

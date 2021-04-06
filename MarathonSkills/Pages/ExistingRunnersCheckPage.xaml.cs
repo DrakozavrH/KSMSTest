@@ -18,5 +18,10 @@ namespace MarathonSkills
 		{
 			NavigationService.Navigate(new RegisterRunnerPage());
 		}
-	}
+
+        private void LoginButton_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+			NavigationService.Navigate(new LoginPage());
+        }
+    }
 }

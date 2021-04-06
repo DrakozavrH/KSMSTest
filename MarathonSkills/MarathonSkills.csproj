@@ -70,6 +70,7 @@
     <Compile Include="Country.cs">
       <DependentUpon>MarathonSkillsModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Data\UserData.cs" />
     <Compile Include="Event.cs">
       <DependentUpon>MarathonSkillsModel.tt</DependentUpon>
     </Compile>
@@ -79,6 +80,7 @@
     <Compile Include="Gender.cs">
       <DependentUpon>MarathonSkillsModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\TextBoxInput.cs" />
     <Compile Include="InventoryReportWindow.xaml.cs">
       <DependentUpon>InventoryReportWindow.xaml</DependentUpon>
     </Compile>
@@ -213,6 +215,9 @@
     <Compile Include="Runner.cs">
       <DependentUpon>MarathonSkillsModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="RunnerImages.cs">
+      <DependentUpon>MarathonSkillsModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Sponsorship.cs">
       <DependentUpon>MarathonSkillsModel.tt</DependentUpon>
     </Compile>
@@ -233,6 +238,9 @@
     </Compile>
     <Compile Include="Windows\BMRInfoWindow.xaml.cs">
       <DependentUpon>BMRInfoWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\RunnerBadgeWindow.xaml.cs">
+      <DependentUpon>RunnerBadgeWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\RunnerCardWindow.xaml.cs">
       <DependentUpon>RunnerCardWindow.xaml</DependentUpon>
@@ -444,6 +452,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\BMRInfoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\RunnerBadgeWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

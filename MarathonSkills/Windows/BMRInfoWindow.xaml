@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         ResizeMode="NoResize"
         Background="{StaticResource BrazilGreen}"
-        Title="BMRInfoWindow" Height="600" Width="600">
+        Title="BMRInfoWindow" Height="600" Width="620">
     <Grid>
 
         <Grid.RowDefinitions>

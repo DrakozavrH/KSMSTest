@@ -25,13 +25,18 @@
             
             <StackPanel Background="{StaticResource BrazilYellow}"
                         Orientation="Horizontal">
-                <Button Content="Назад"
+                
+                <Button 
+                    Name="BackButton"
+                    Content="Назад"
                         FontSize="24"
                         FontFamily="{StaticResource MainFont}"
                         Margin="20 20"
                         Padding="30 0 30 0"
                         Background="{StaticResource BrazilBlue}"
-                        Foreground="{StaticResource WsLightGray}" />
+                        Foreground="{StaticResource WsLightGray}" 
+                    Click="BackButton_Click"
+                    />
 
                 
                     <Label Content="Marathon Skills 2016"
@@ -39,6 +44,28 @@
                        FontFamily="{StaticResource HeaderFont}"
                        VerticalContentAlignment="Center" />
                 
+
+
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Right">
+
+                <TextBlock 
+                    Name="UserNameTextBox"
+                    Text="Guest"
+                           FontSize="30"
+                           FontFamily="{StaticResource HeaderFont}" />
+
+                <Button Name="LoginExitButton"
+                        Content="Вход"
+                        FontSize="24"
+                        FontFamily="{StaticResource MainFont}"
+                        Margin="20 20"
+                        Padding="30 0 30 0"
+                        Background="{StaticResource BrazilBlue}"
+                        Foreground="{StaticResource WsLightGray}"
+                        Click="LoginExitButton_Click" />
 
 
             </StackPanel>
