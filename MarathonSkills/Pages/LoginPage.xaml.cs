@@ -42,9 +42,9 @@ namespace MarathonSkills
 
             var entities = new MarathonSkillsEntities();
 
-            var User = entities.User.Where(i => i.Email == EmailTextBox.Text && i.Password == PasswordTextBox.Password);
+            var User = entities.User.Where(i => i.Email == EmailTextBox.Text && i.Password == PasswordTextBox.Password).FirstOrDefault();
 
-            if (User.Count() == 0)
+            if (User == null)
             {
 
                 MessageBox.Show("Пользователя с такими данными не существует");
@@ -55,18 +55,34 @@ namespace MarathonSkills
             {
 
                 MainWindow mainWindow;
+                
 
-                switch (User.First().RoleId)
+                switch (User.RoleId)
                 {
 
                     case "R":
                         mainWindow = new MainWindow(new RunnerPage());
+                        mainWindow.UserData = new Data.UserData
+                        {
+                            Email = User.Email,
+                            RunnerId = entities.Runner.Where(i => i.Email == User.Email).First().RunnerId
+                        };
                         break;
                     case "C":
                         mainWindow = new MainWindow(new CoordinatorPage());
+                        mainWindow.UserData = new Data.UserData
+                        {
+                            Email = User.Email
+                            
+                        };
                         break;
                     case "A":
                         mainWindow = new MainWindow(new AdministratorPage());
+                        mainWindow.UserData = new Data.UserData
+                        {
+                            Email = User.Email
+
+                        };
                         break;
                     default:
                         mainWindow = null;
@@ -83,6 +99,11 @@ namespace MarathonSkills
                     return;
 
                 }
+
+                
+
+                mainWindow.UserNameTextBox.Text = User.FirstName + " " + User.LastName;
+                mainWindow.LoginExitButton.Content = "Выход";
 
                 mainWindow.Show();
                 Window.GetWindow(this).Close();

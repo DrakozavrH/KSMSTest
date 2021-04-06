@@ -98,15 +98,20 @@ namespace MarathonSkills
 				return; 
 			}
 
+			MarathonSkillsEntities entities = new MarathonSkillsEntities();
 
-
-
+			if(entities.User.Where(i => i.Email == EmailTextBox.Text).Count() !=0)
+            {
+				MessageBox.Show("Пользователь с таким именем уже существует");
+				return;
+            }
 
 
 			if (ImageByteArray.Count() > 0)
 			{
-				MarathonSkillsEntities entities = new MarathonSkillsEntities();
+				
 
+				
 				
 
 				entities.User.Add(new User
@@ -142,7 +147,7 @@ namespace MarathonSkills
 
 				entities.SaveChanges();
 
-				NavigationService.Navigate(new RunnerRegistrationConfirmationPage());
+				NavigationService.Navigate(new LoginPage());
 				NavigationService.RemoveBackEntry();
 
 			}
@@ -150,6 +155,7 @@ namespace MarathonSkills
 
 
 				MessageBox.Show("Изображение не выбрано");
+				return;
 			
 			}
 

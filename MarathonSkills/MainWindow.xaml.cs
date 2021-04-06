@@ -12,7 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using MarathonSkills.Helpers;
-using MarathonSkills;
+using MarathonSkills.Data;
+
 
 namespace MarathonSkills
 {
@@ -21,14 +22,18 @@ namespace MarathonSkills
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        public UserData UserData;
+
+
         public MainWindow(Page page)
         {
             InitializeComponent();
 
             MainFrame.Content = page;
 
-            
 
+            
                       
             
 
@@ -41,11 +46,30 @@ namespace MarathonSkills
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
+            if (MainFrame.CanGoBack)
+            {
+                MainFrame.GoBack();
+            }
+            else
+            {
+                StartWindow startWindow = new StartWindow();
+                startWindow.Show();
+                Window.GetWindow(this).Close();
+
+
+            }
+
+        }
+
+
+        private void LoginExitButton_Click(object sendder, RoutedEventArgs e)
+        {
+
             if (LoginExitButton.Content.ToString() == "Вход")
             {
 
                 MainFrame.Navigate(new LoginPage());
-                LoginExitButton.Content = "Выход";
+                
 
 
             }
@@ -61,6 +85,8 @@ namespace MarathonSkills
 
             }
 
+
         }
+
     }
 }

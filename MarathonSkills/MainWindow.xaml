@@ -51,7 +51,9 @@
             <StackPanel Orientation="Horizontal"
                         HorizontalAlignment="Right">
 
-                <TextBlock Text="Guest"
+                <TextBlock 
+                    Name="UserNameTextBox"
+                    Text="Guest"
                            FontSize="30"
                            FontFamily="{StaticResource HeaderFont}" />
 

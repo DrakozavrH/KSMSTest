@@ -70,6 +70,7 @@
     <Compile Include="Country.cs">
       <DependentUpon>MarathonSkillsModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Data\UserData.cs" />
     <Compile Include="Event.cs">
       <DependentUpon>MarathonSkillsModel.tt</DependentUpon>
     </Compile>
