@@ -11,7 +11,7 @@
     <Grid>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.4*"/>
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
@@ -24,6 +24,7 @@
             TextAlignment="Center"
             Padding="0 20 0 0"
 			Background="{StaticResource BrazilYellow}"
+            VerticalAlignment="Stretch"
             />
 
         <Image
@@ -32,6 +33,7 @@
             VerticalAlignment="Center"
             Grid.Row="1"
             Margin="10"
+            
             />
 
         <ScrollViewer
@@ -49,8 +51,7 @@
 					   Padding="10"
 					   Text="text"
 				TextWrapping="Wrap"
-					   
-			/>
+                       Margin="10" />
 		</ScrollViewer>
         
 

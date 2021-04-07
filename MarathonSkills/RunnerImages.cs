@@ -20,9 +20,9 @@ public partial class RunnerImages
 
     public int Id { get; set; }
 
-    public int runnerId { get; set; }
-
     public byte[] ImageBytes { get; set; }
+
+    public int runnerId { get; set; }
 
 
 

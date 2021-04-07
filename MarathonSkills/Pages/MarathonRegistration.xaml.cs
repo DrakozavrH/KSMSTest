@@ -30,6 +30,14 @@ namespace MarathonSkills
         public MarathonRegistration()
         {
             InitializeComponent();
+
+            var entities = new MarathonSkillsEntities();
+
+            
+
+            CharityComboBox.ItemsSource = entities.Charity.Select(i => i.CharityName).ToArray();
+            CharityComboBox.SelectedIndex = 0;
+
         }
 
         private void FullMarathonCheckBox_Checked(object sender, RoutedEventArgs e)
@@ -99,20 +107,49 @@ namespace MarathonSkills
 
         private void CharityDonationTextBox_PreviewKeyDown(object sender, KeyEventArgs e)
         {
-            Regex regex = new Regex("[0-9]");
+            char character = (char)KeyInterop.VirtualKeyFromKey(e.Key);
 
-            if (!regex.IsMatch(e.Key.ToString()) && e.Key != Key.Back)
-                e.Handled = true;
-
-            
-
-
+            e.Handled = !char.IsDigit(character) && e.Key != Key.Back;
         }
 
         private void CharityDonationTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (CharityDonationTextBox.Text == "")
+            if (CharityDonationTextBox.Text == "" || CharityDonationTextBox.Text == "0")
                 CharityDonationTextBox.Text = "1";
+        }
+
+        private void CharityInfoButton_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new CharityInformationWindow(CharityComboBox.Text);
+            window.ShowDialog();
+        }
+
+        private void CancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
+        }
+
+        private void RegisterButton_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (!(FullMarathonIsChecked == true || HalfMarathonIsChecked == true || SmallMarathonIsChecked == true)) {
+
+                MessageBox.Show("Должен быть выбран хотя бы один вид марафона");
+                return;
+            
+            }
+
+            var entities = new MarathonSkillsEntities();
+
+            entities.Registration.Add(new Registration
+            { 
+                RunnerId = ((MainWindow)Window.GetWindow(this)).UserData.RunnerId,
+                RegistrationDateTime = DateTime.Now,
+                //TODO rest
+            
+            });
+
+
         }
     }
 }

@@ -84,6 +84,9 @@
     <Compile Include="InventoryReportWindow.xaml.cs">
       <DependentUpon>InventoryReportWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Marathon.cs">
+      <DependentUpon>MarathonSkillsModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Pages\AboutMarathonSkillsPage.xaml.cs">
       <DependentUpon>AboutMarathonSkillsPage.xaml</DependentUpon>
     </Compile>
@@ -137,9 +140,6 @@
     </Compile>
     <Compile Include="Pages\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Marathon.cs">
-      <DependentUpon>MarathonSkillsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="MarathonSkillsModel.cs">
       <AutoGen>True</AutoGen>

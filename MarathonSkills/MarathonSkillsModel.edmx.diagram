@@ -42,8 +42,8 @@
         <AssociationConnector Association="MarathonSkills2016Model.FK__Runner__Email__3F466844" ManuallyRouted="false" />
         <AssociationConnector Association="MarathonSkills2016Model.FK__Timesheet__Staff__5441852A" ManuallyRouted="false" />
         <EntityTypeShape EntityType="MarathonSkills2016Model.RunnerImages" Width="1.5" PointX="5.25" PointY="9.875" />
-        <AssociationConnector Association="MarathonSkills2016Model.FK__RunnerIma__runne__71D1E811" />
-      </Diagram>
+        <AssociationConnector Association="MarathonSkills2016Model.FK__RunnerIma__runne__59FA5E80" />
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

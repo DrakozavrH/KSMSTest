@@ -137,14 +137,18 @@
                 FontSize="24"
                 />
 
-            <ComboBox 
+            <ComboBox
+                Name="CharityComboBox"
                 Grid.Row="5"
                 Grid.Column="1"
                 Margin="10"
-                
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                FontSize="24"
                 />
 
             <Button 
+                Name="CharityInfoButton"
                 Grid.Row="5"
                 Grid.Column="2"
                 Margin="30 10"
@@ -152,6 +156,7 @@
                 Background="{StaticResource BrazilBlue}"
                 Foreground="{StaticResource WsWhite}"
                 FontSize="24"
+                Click="CharityInfoButton_Click"
                 />
 
             <TextBlock Grid.Row="6"
@@ -171,21 +176,29 @@
                 TextChanged="CharityDonationTextBox_TextChanged"
                 />
 
-            <Button Grid.Row="7"
+            <Button 
+                Name="RegisterButton"
+                Grid.Row="7"
                     Grid.Column="0"
                     Margin="10 10"
                     Content="Регистрация"
                     Background="{StaticResource BrazilBlue}"
                     Foreground="{StaticResource WsWhite}"
-                    FontSize="24" />
+                    FontSize="24" 
+                Click="RegisterButton_Click"
+                />
 
-            <Button Grid.Row="7"
+            <Button 
+                Name="CancelButton"
+                Grid.Row="7"
                     Grid.Column="1"
                     Margin="10 10"
                     Content="Отмена"
                     Background="{StaticResource BrazilBlue}"
                     Foreground="{StaticResource WsWhite}"
-                    FontSize="24" />
+                    FontSize="24" 
+                Click="CancelButton_Click"
+                />
 
 
         </Grid>
