@@ -124,22 +124,26 @@ namespace MarathonSkills
 					
 				});
 
-				entities.Runner.Add(new Runner
+
+				Runner NewRunner = new Runner 
 				{
+
 					Email = EmailTextBox.Text,
 					Gender = GenderPickerComboBox.Text,
 					DateOfBirth = BirthDatePicker.SelectedDate,
 					CountryCode = entities.Country.Where(i => i.CountryName == CountryPickerComboBox.Text).FirstOrDefault().CountryCode
 
-				});
+				};
 
-				int RunnerID = entities.Runner.Max(r => r.RunnerId);
+				entities.Runner.Add(NewRunner);
+				
+									
 
 				entities.RunnerImages.Add(new RunnerImages
 				{
 
 					ImageBytes = ImageByteArray,
-					runnerId = RunnerID
+					runnerId = NewRunner.RunnerId
 
 
 				});

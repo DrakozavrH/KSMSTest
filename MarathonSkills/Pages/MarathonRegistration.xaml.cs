@@ -24,8 +24,9 @@ namespace MarathonSkills
         private bool FullMarathonIsChecked;
         private bool HalfMarathonIsChecked;
         private bool SmallMarathonIsChecked;
-        private int BundleSelected = 1;
+        private RadioButton BundleSelected;
 
+        private MainWindow mainWindow;
 
         public MarathonRegistration()
         {
@@ -37,6 +38,10 @@ namespace MarathonSkills
 
             CharityComboBox.ItemsSource = entities.Charity.Select(i => i.CharityName).ToArray();
             CharityComboBox.SelectedIndex = 0;
+
+            BundleSelected = BundleOption1RadioButton;
+
+            mainWindow = (MainWindow)(Window.GetWindow(this));
 
         }
 
@@ -78,14 +83,14 @@ namespace MarathonSkills
 
         private void BundleOption1RadioButton_Checked(object sender, RoutedEventArgs e)
         {
-            BundleSelected = 1;
+            BundleSelected = (RadioButton)sender ;
         }
 
        
 
         private void BundleOption2RadioButton_Checked(object sender, RoutedEventArgs e)
         {
-            BundleSelected = 2;
+            BundleSelected = (RadioButton)sender;
             RegistrationFeeTextBox.Text = "$" + (Int32.Parse(RegistrationFeeTextBox.Text.Trim('$')) + 20).ToString();
         }
 
@@ -96,7 +101,7 @@ namespace MarathonSkills
 
         private void BundleOption3RadioButton_Checked(object sender, RoutedEventArgs e)
         {
-            BundleSelected = 3;
+            BundleSelected = (RadioButton)sender;
             RegistrationFeeTextBox.Text = "$" + (Int32.Parse(RegistrationFeeTextBox.Text.Trim('$')) + 45).ToString();
         }
 
@@ -141,14 +146,147 @@ namespace MarathonSkills
 
             var entities = new MarathonSkillsEntities();
 
-            entities.Registration.Add(new Registration
-            { 
+            //if (entities.Registration.Where(r => r.RunnerId == mainWindow.UserData.RunnerId).Count() > 0) {
+
+
+            //    MessageBox.Show("Вы уже зарегистрированы на марафон");
+            
+            
+            //}
+
+            var registration = new Registration
+            {
+
                 RunnerId = ((MainWindow)Window.GetWindow(this)).UserData.RunnerId,
                 RegistrationDateTime = DateTime.Now,
-                //TODO rest
-            
-            });
+                RaceKitOptionId = BundleSelected.Tag.ToString(),
+                RegistrationStatusId = 1,
+                Cost = Convert.ToDecimal(RegistrationFeeTextBox.Text.Trim('$')),
+                CharityId = entities.Charity.Where(c => c.CharityName == CharityComboBox.Text).First().CharityId,
+                SponsorshipTarget = Convert.ToDecimal(CharityDonationTextBox.Text)
 
+            };
+
+            #region v2
+
+            //RegistrationEvent registrationEvent = new RegistrationEvent {RegistrationId = registration.RegistrationId };
+
+            //if (FullMarathonIsChecked)
+            //{
+
+            //    registrationEvent.EventId = "15_5FM";
+            //    if (entities.RegistrationEvent.Where(a => a.RegistrationId == registration.RegistrationId && a.EventId == "15_5FM").Count() > 0)
+            //    {
+
+            //        MessageBox.Show("Вы уже зарегистрированы на данный марафон");
+            //        return;
+
+            //    }
+            //    entities.RegistrationEvent.Add(registrationEvent);
+
+            //}
+
+
+            //if (HalfMarathonIsChecked)
+            //{
+
+            //    registrationEvent.EventId = "15_5HM";
+            //    if (entities.RegistrationEvent.Where(a => a.RegistrationId == registration.RegistrationId && a.EventId == "15_5HM").Count() > 0)
+            //    {
+
+            //        MessageBox.Show("Вы уже зарегистрированы на данный марафон");
+            //        return;
+
+            //    }
+            //    entities.RegistrationEvent.Add(registrationEvent);
+            //}
+
+
+            //if (SmallMarathonIsChecked)
+            //{
+
+            //    registrationEvent.EventId = "15_5FR";
+            //    if (entities.RegistrationEvent.Where(a => a.RegistrationId == registration.RegistrationId && a.EventId == "15_5FR").Count() > 0)
+            //    {
+
+            //        MessageBox.Show("Вы уже зарегистрированы на данный марафон");
+            //        return;
+
+            //    }
+            //    entities.RegistrationEvent.Add(registrationEvent);
+
+
+            //}
+
+            #endregion
+
+            if (FullMarathonIsChecked)
+            {
+                if(!AddRegistrationEvent("15_5FM", registration, ref entities))
+                    return;
+            }
+
+            if (HalfMarathonIsChecked) {
+
+                if(!AddRegistrationEvent("15_5HM", registration, ref entities))
+                    return;
+
+            }
+
+
+            if (SmallMarathonIsChecked) {
+
+                if (!AddRegistrationEvent("15_5FR", registration, ref entities))
+                    return;
+
+
+            }
+                
+
+            entities.Registration.Add(registration);
+
+            entities.SaveChanges();
+
+
+            NavigationService.Navigate(new RunnerRegistrationConfirmationPage());
+            NavigationService.RemoveBackEntry();
+            
+        }
+
+
+        private bool AddRegistrationEvent(string eventID, Registration registration,ref MarathonSkillsEntities entities)
+        {
+
+           
+            RegistrationEvent registrationEvent = new RegistrationEvent { RegistrationId = registration.RegistrationId };
+
+            var RunnerRegistrations = entities.Registration.Where(r => r.RunnerId == registration.RunnerId).Select(i=> i.RegistrationId);
+
+            registrationEvent.EventId = eventID;
+
+
+            //if (entities.RegistrationEvent.Where(a => a.RegistrationId ==  && a.EventId == eventID).Count() > 0)
+            //{
+
+            //    MessageBox.Show("Вы уже зарегистрированы на данный марафон");
+            //    return;
+
+            //}
+
+
+            if (entities.RegistrationEvent.Any(r => RunnerRegistrations.Contains(r.RegistrationId) && r.EventId == eventID)) {
+
+
+                MessageBox.Show("Вы уже зарегистрированы на данный марафон");                
+                return false;
+
+
+            }
+
+
+            entities.RegistrationEvent.Add(registrationEvent);
+
+            return true; 
 
         }
     }
